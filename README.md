@@ -11,18 +11,38 @@ A command-line tool to automatically generate and add text-to-speech audio to yo
 
 ## 📦 Installation
 
-1. Clone or download this repository
-2. Install dependencies:
+1. **Clone or download this repository**
+   ```bash
+   git clone <your-repo>
+   cd AnkiTTS
+   ```
+
+2. **Create and activate virtual environment**
+   ```bash
+   # Create virtual environment
+   python3 -m venv venv
+   
+   # Activate it
+   source venv/bin/activate  # On macOS/Linux
+   # OR
+   venv\Scripts\activate     # On Windows
+   ```
+
+3. **Install dependencies**
    ```bash
    pip install -r requirements.txt
    ```
 
 ## 🚀 Usage
 
-Simply run the script and follow the interactive prompts:
-
+### For first-time setup:
 ```bash
-python main.py
+python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt && python main.py
+```
+
+### For subsequent runs:
+```bash
+source venv/bin/activate && python main.py
 ```
 
 The CLI will guide you through:
