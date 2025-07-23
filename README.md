@@ -13,7 +13,7 @@ A command-line tool to automatically generate and add text-to-speech audio to yo
 
 1. **Clone or download this repository**
    ```bash
-   git clone https://github.com/selmetwa/AnkiTTS
+   git clone https://github.com/selmetwa/AnkiTTS.git
    cd AnkiTTS
    ```
 
