@@ -125,8 +125,10 @@ class AnkiAudioGenerator:
             env_config["api_key"] = os.getenv("ELEVENLABS_API_KEY")
         if os.getenv("ELEVENLABS_VOICE_ID"):
             env_config["voice_id"] = os.getenv("ELEVENLABS_VOICE_ID")
-        if os.getenv("LANGUAGE_CODE"):
-            env_config["language_code"] = os.getenv("LANGUAGE_CODE")
+        if os.getenv("TARGET_LANGUAGE"):
+            env_config["target_language"] = os.getenv("TARGET_LANGUAGE")
+        if os.getenv("MOTHER_LANGUAGE"):
+            env_config["mother_language"] = os.getenv("MOTHER_LANGUAGE")
         if os.getenv("ANKI_DECK_NAME"):
             env_config["deck_name"] = os.getenv("ANKI_DECK_NAME")
         if os.getenv("TEXT_FIELD"):
@@ -135,6 +137,39 @@ class AnkiAudioGenerator:
             env_config["audio_field"] = os.getenv("AUDIO_FIELD")
 
         return env_config
+
+    def save_config_to_env(self):
+        """Save current configuration to .env file"""
+        try:
+            env_content = f"""# AnkiTTS Configuration
+# Generated automatically - edit with care
+
+# Google Gemini API Key
+GEMINI_API_KEY={self.config.get('gemini_api_key', '')}
+
+# ElevenLabs API Key
+ELEVENLABS_API_KEY={self.config.get('api_key', '')}
+
+# ElevenLabs Voice ID
+ELEVENLABS_VOICE_ID={self.config.get('voice_id', '')}
+
+# Language Configuration
+TARGET_LANGUAGE={self.config.get('target_language', 'de')}
+MOTHER_LANGUAGE={self.config.get('mother_language', 'en')}
+
+# Anki Configuration
+ANKI_DECK_NAME={self.config.get('deck_name', 'german')}
+TEXT_FIELD={self.config.get('text_field', 'Front')}
+AUDIO_FIELD={self.config.get('audio_field', 'Front')}
+"""
+
+            with open(".env", "w") as f:
+                f.write(env_content)
+            print("✅ Configuration saved to .env file")
+            return True
+        except Exception as e:
+            print(f"❌ Failed to save configuration: {e}")
+            return False
 
     def collect_configuration(self):
         """Collect all configuration from user"""
@@ -284,14 +319,38 @@ class AnkiAudioGenerator:
         else:
             print(f"📁 Using voice ID from .env: {self.config['voice_id']}")
 
-        # Language code with default
-        if not self.config.get("language_code"):
-            language_code = input(
-                "Enter language code (Language code (ISO 639-1)  e.g., 'ar' for Arabic, 'en' for English) [en]: "
+        # Language configuration
+        print("\n🌍 Language Configuration")
+        print("=" * 30)
+
+        # Target language (language being learned)
+        if not self.config.get("target_language"):
+            target_language = input(
+                "Enter target language code (language you're learning, e.g., 'de' for German) [de]: "
             ).strip()
-            self.config["language_code"] = language_code if language_code else "en"
+            self.config["target_language"] = (
+                target_language if target_language else "de"
+            )
         else:
-            print(f"📁 Using language code from .env: {self.config['language_code']}")
+            print(
+                f"📁 Using target language from .env: {self.config['target_language']}"
+            )
+
+        # Mother language (native language for translations)
+        if not self.config.get("mother_language"):
+            mother_language = input(
+                "Enter mother language code (your native language for translations, e.g., 'en' for English) [en]: "
+            ).strip()
+            self.config["mother_language"] = (
+                mother_language if mother_language else "en"
+            )
+        else:
+            print(
+                f"📁 Using mother language from .env: {self.config['mother_language']}"
+            )
+
+        # Set language_code for TTS (same as target language)
+        self.config["language_code"] = self.config["target_language"]
 
         # Show configuration summary
         print("\n📋 Configuration Summary")
@@ -299,6 +358,8 @@ class AnkiAudioGenerator:
         print(f"Deck: {self.config['deck_name']}")
         print(f"Text field: {self.config['text_field']}")
         print(f"Audio field: {self.config['audio_field']}")
+        print(f"Target language: {self.config['target_language']}")
+        print(f"Mother language: {self.config['mother_language']}")
         print(
             f"Gemini API: {'✅ Configured' if self.config['gemini_api_key'] else '❌ Not configured'}"
         )
@@ -306,13 +367,19 @@ class AnkiAudioGenerator:
             f"ElevenLabs API: {'✅ Configured' if self.config['api_key'] else '❌ Not configured'}"
         )
         print(f"Voice ID: {self.config['voice_id']}")
-        print(f"Language: {self.config['language_code']}")
         print()
 
         confirm = input("Is this configuration correct? (y/n): ").strip().lower()
         if confirm != "y":
             print("❌ Configuration cancelled. Please restart the program.")
             return False
+
+        # Ask if user wants to save configuration
+        save_config = (
+            input("\nSave this configuration to .env file? (y/n): ").strip().lower()
+        )
+        if save_config == "y":
+            self.save_config_to_env()
 
         return True
 
@@ -358,8 +425,13 @@ class AnkiAudioGenerator:
             return None
 
     def extract_text_from_field(self, field_value):
-        """Extract actual text content from a field, removing any [sound:...] tags"""
-        clean_text = re.sub(r"\[sound:[^\]]+\]", "", field_value).strip()
+        """Extract actual text content from a field, removing any [sound:...] tags and phonetic transcription"""
+        # Remove sound tags
+        clean_text = re.sub(r"\[sound:[^\]]+\]", "", field_value)
+        # Remove phonetic transcription (text in square brackets that's not a sound tag)
+        clean_text = re.sub(r"\[[^\]]+\](?![^[]*sound)", "", clean_text)
+        # Clean up extra whitespace
+        clean_text = re.sub(r"\n\s*\n", "\n", clean_text).strip()
         return clean_text
 
     def generate_audio_bytes(self, text):
@@ -478,20 +550,25 @@ class AnkiAudioGenerator:
     ):
         """Generate German words and phrases using Gemini"""
         try:
+            target_lang = self.config.get("target_language", "de")
+            mother_lang = self.config.get("mother_language", "en")
+
             prompt = f"""
-            Generate German vocabulary for the topic: "{topic}"
+            Generate {target_lang.upper()} vocabulary for the topic: "{topic}"
             
             Requirements:
-            - Generate {num_words} German words with English translations
-            - Generate {num_phrases} German phrases with English translations
+            - Generate {num_words} {target_lang.upper()} words with {mother_lang.upper()} translations and IPA phonetic transcription
+            - Generate {num_phrases} {target_lang.upper()} phrases with {mother_lang.upper()} translations and IPA phonetic transcription
+            - Words are always accompanied by the article — for example, der Mann (the man).
+            - Include IPA phonetic notation for pronunciation
             - Format as JSON with this structure:
             {{
                 "words": [
-                    {{"german": "German word", "english": "English translation"}},
+                    {{"german": "{target_lang.upper()} word", "english": "{mother_lang.upper()} translation", "phonetic": "IPA transcription"}},
                     ...
                 ],
                 "phrases": [
-                    {{"german": "German phrase", "english": "English translation"}},
+                    {{"german": "{target_lang.upper()} phrase", "english": "{mother_lang.upper()} translation", "phonetic": "IPA transcription"}},
                     ...
                 ]
             }}
@@ -500,6 +577,7 @@ class AnkiAudioGenerator:
             
             Make sure the content is relevant to the topic and appropriate for language learning.
             Avoid duplicating words/phrases that might already be in the deck.
+            Include accurate IPA phonetic notation for proper pronunciation.
             """
 
             response = self.gemini_client.generate_content(prompt)
@@ -516,6 +594,49 @@ class AnkiAudioGenerator:
 
         except Exception as e:
             print(f"ERROR: Failed to generate German content: {e}")
+            return None
+
+    def generate_grammar_content(self, topic, num_rules, existing_content=""):
+        """Generate concise German grammar rules with pronunciation tips using Gemini."""
+        try:
+            target_lang = self.config.get("target_language", "de")
+            mother_lang = self.config.get("mother_language", "en")
+
+            prompt = f"""
+            Create {num_rules} short, easy-to-remember {target_lang.upper()} grammar rules about "{topic}".
+            Each rule should include:
+            - a clear title
+            - a simple explanation in {mother_lang.upper()}
+            - a short pronunciation tip (with IPA)
+            - one practical example in {target_lang.upper()}
+            - one memory tip (fun or visual)
+            
+            Focus on common mistakes {mother_lang.upper()} speakers make when learning {target_lang.upper()}.
+            Output as JSON:
+            {{
+                "grammar_rules": [
+                    {{
+                        "rule": "title",
+                        "explanation": "short explanation in {mother_lang.upper()}",
+                        "pronunciation_tip": "tip with IPA if relevant",
+                        "example": "{target_lang.upper()} example",
+                        "example_pronunciation": "IPA example",
+                        "memory_tip": "how to remember"
+                    }}
+                ]
+            }}
+            
+            Existing deck context: {existing_content}
+            """
+
+            response = self.gemini_client.generate_content(prompt).text.strip()
+
+            # Clean markdown formatting
+            response = response.removeprefix("```json").removesuffix("```").strip()
+            return json.loads(response)
+
+        except Exception as e:
+            print(f"❌ Grammar generation failed: {e}")
             return None
 
     def create_anki_cards(self, content_data):
@@ -556,12 +677,23 @@ class AnkiAudioGenerator:
         # Create cards for words
         for word_data in content_data.get("words", []):
             try:
+                # Include phonetic transcription in the front display
+                phonetic = word_data.get("phonetic", "")
+                front_content = f"{word_data['german']}"
+                if phonetic:
+                    front_content += f"\n[{phonetic}]"
+
+                # Include phonetic in back for reference
+                back_content = word_data["english"]
+                if phonetic:
+                    back_content += f"\n\nPronunciation: [{phonetic}]"
+
                 note = {
                     "deckName": self.config["deck_name"],
                     "modelName": model_name,
                     "fields": {
-                        self.config["text_field"]: word_data["german"],
-                        "Back": word_data["english"],
+                        self.config["text_field"]: front_content,
+                        "Back": back_content,
                     },
                     "tags": ["generated", "german"],
                 }
@@ -579,12 +711,23 @@ class AnkiAudioGenerator:
         # Create cards for phrases
         for phrase_data in content_data.get("phrases", []):
             try:
+                # Include phonetic transcription in the front display
+                phonetic = phrase_data.get("phonetic", "")
+                front_content = f"{phrase_data['german']}"
+                if phonetic:
+                    front_content += f"\n[{phonetic}]"
+
+                # Include phonetic in back for reference
+                back_content = phrase_data["english"]
+                if phonetic:
+                    back_content += f"\n\nPronunciation: [{phonetic}]"
+
                 note = {
                     "deckName": self.config["deck_name"],
                     "modelName": model_name,
                     "fields": {
-                        self.config["text_field"]: phrase_data["german"],
-                        "Back": phrase_data["english"],
+                        self.config["text_field"]: front_content,
+                        "Back": back_content,
                     },
                     "tags": ["generated", "german", "phrase"],
                 }
@@ -600,6 +743,85 @@ class AnkiAudioGenerator:
                 error_count += 1
 
         print(f"✅ Created {success_count} new cards")
+        if error_count > 0:
+            print(f"⚠️  {error_count} cards failed to create")
+
+        return success_count > 0
+
+    def create_grammar_cards(self, content_data):
+        """Create new Anki cards from generated grammar content"""
+        if not content_data:
+            return False
+
+        success_count = 0
+        error_count = 0
+
+        # Check if deck exists, create if it doesn't
+        decks = self.call_ankiconnect("deckNames", {})
+        if not decks or not decks.get("result"):
+            print("❌ Could not get available decks")
+            return False
+
+        if self.config["deck_name"] not in decks["result"]:
+            print(f"📁 Deck '{self.config['deck_name']}' not found, creating it...")
+            create_result = self.call_ankiconnect(
+                "createDeck", {"deck": self.config["deck_name"]}
+            )
+            if not create_result or create_result.get("error"):
+                print(
+                    f"❌ Failed to create deck: {create_result.get('error', 'Unknown error')}"
+                )
+                return False
+            print(f"✅ Created deck '{self.config['deck_name']}'")
+
+        # Get model name for the deck
+        models = self.call_ankiconnect("modelNames", {})
+        if not models or not models.get("result"):
+            print("❌ Could not get available models")
+            return False
+
+        # Use the first available model (usually Basic)
+        model_name = models["result"][0]
+
+        # Create cards for grammar rules
+        for rule_data in content_data.get("grammar_rules", []):
+            try:
+                # Create comprehensive content for the front of the card
+                front_content = f"{rule_data['rule']}\n\n{rule_data['example']}"
+
+                # Create detailed back content with all information
+                back_content = f"""<b>Rule:</b> {rule_data['rule']}
+
+<b>Explanation:</b> {rule_data['explanation']}
+
+<b>Pronunciation Tip:</b> {rule_data['pronunciation_tip']}
+
+<b>Example:</b> {rule_data['example']}
+<b>Pronunciation:</b> {rule_data['example_pronunciation']}
+
+<b>Memory Tip:</b> {rule_data['memory_tip']}"""
+
+                note = {
+                    "deckName": self.config["deck_name"],
+                    "modelName": model_name,
+                    "fields": {
+                        self.config["text_field"]: front_content,
+                        "Back": back_content,
+                    },
+                    "tags": ["generated", "german", "grammar", "pronunciation"],
+                }
+
+                response = self.call_ankiconnect("addNote", {"note": note})
+                if response and not response.get("error"):
+                    success_count += 1
+                else:
+                    error_count += 1
+
+            except Exception as e:
+                print(f"ERROR creating grammar card: {e}")
+                error_count += 1
+
+        print(f"✅ Created {success_count} new grammar cards")
         if error_count > 0:
             print(f"⚠️  {error_count} cards failed to create")
 
@@ -651,13 +873,17 @@ class AnkiAudioGenerator:
         print(f"\n📝 Generated content preview:")
         print("Words:")
         for word in content_data.get("words", [])[:3]:
-            print(f"  {word['german']} = {word['english']}")
+            phonetic = word.get("phonetic", "")
+            phonetic_display = f" [{phonetic}]" if phonetic else ""
+            print(f"  {word['german']}{phonetic_display} = {word['english']}")
         if len(content_data.get("words", [])) > 3:
             print(f"  ... and {len(content_data['words']) - 3} more words")
 
         print("\nPhrases:")
         for phrase in content_data.get("phrases", [])[:2]:
-            print(f"  {phrase['german']} = {phrase['english']}")
+            phonetic = phrase.get("phonetic", "")
+            phonetic_display = f" [{phonetic}]" if phonetic else ""
+            print(f"  {phrase['german']}{phonetic_display} = {phrase['english']}")
         if len(content_data.get("phrases", [])) > 2:
             print(f"  ... and {len(content_data['phrases']) - 2} more phrases")
 
@@ -679,6 +905,81 @@ class AnkiAudioGenerator:
 
         if success:
             print("✅ Content generation and card creation complete!")
+
+            # Ask if user wants to add audio
+            add_audio = (
+                input("\nWould you like to add audio to the new cards? (y/n): ")
+                .strip()
+                .lower()
+            )
+            if add_audio == "y":
+                return self.process_deck()
+
+        return success
+
+    def generate_and_add_grammar_content(self):
+        """Generate German grammar rules with pronunciation tips using Gemini and add to deck"""
+        print(f"\n📚 Step 3: Generate German Grammar Content")
+        print("=" * 50)
+
+        # Get topic
+        topic = input(
+            "Enter grammar topic (e.g., 'articles', 'verb conjugation', 'pronunciation', 'cases'): "
+        ).strip()
+        if not topic:
+            print("❌ Topic is required")
+            return False
+
+        # Get number of grammar rules
+        try:
+            num_rules = int(
+                input("Number of grammar rules to generate [5]: ").strip() or "5"
+            )
+        except ValueError:
+            print("❌ Please enter a valid number")
+            return False
+
+        # Analyze existing deck content
+        print("\n📊 Analyzing existing deck content...")
+        existing_content = self.analyze_deck_content()
+        print(f"✅ Deck analysis complete")
+
+        # Generate content with Gemini
+        print(f"\n🧠 Generating {num_rules} grammar rules about '{topic}'...")
+        content_data = self.generate_grammar_content(topic, num_rules, existing_content)
+
+        if not content_data:
+            print("❌ Failed to generate content")
+            return False
+
+        # Show preview
+        print(f"\n📝 Generated grammar content preview:")
+        for i, rule in enumerate(content_data.get("grammar_rules", [])[:2], 1):
+            print(f"\n{i}. {rule['rule']}")
+            print(f"   Example: {rule['example']}")
+            print(f"   Pronunciation: {rule['example_pronunciation']}")
+
+        if len(content_data.get("grammar_rules", [])) > 2:
+            print(f"   ... and {len(content_data['grammar_rules']) - 2} more rules")
+
+        # Confirm creation
+        confirm = (
+            input(
+                f"\nCreate {len(content_data.get('grammar_rules', []))} new grammar cards? (y/n): "
+            )
+            .strip()
+            .lower()
+        )
+        if confirm != "y":
+            print("❌ Card creation cancelled")
+            return False
+
+        # Create cards
+        print("\n📚 Creating Anki grammar cards...")
+        success = self.create_grammar_cards(content_data)
+
+        if success:
+            print("✅ Grammar content generation and card creation complete!")
 
             # Ask if user wants to add audio
             add_audio = (
@@ -769,14 +1070,203 @@ class AnkiAudioGenerator:
 
         return True
 
+    def configure_deck_settings(self):
+        """Configure deck and field settings"""
+        print("\n📚 Deck and Field Configuration")
+        print("=" * 40)
+
+        # Get deck name
+        decks = self.get_anki_decks()
+        if decks:
+            print("Available decks:")
+            for i, deck in enumerate(decks, 1):
+                print(f"  {i}. {deck}")
+            print()
+
+            while True:
+                deck_input = input(
+                    "Enter deck name (or number from list above): "
+                ).strip()
+
+                if deck_input.isdigit():
+                    idx = int(deck_input) - 1
+                    if 0 <= idx < len(decks):
+                        self.config["deck_name"] = decks[idx]
+                        break
+                    else:
+                        print("❌ Invalid number. Please try again.")
+                        continue
+
+                if deck_input in decks:
+                    self.config["deck_name"] = deck_input
+                    break
+                else:
+                    print("❌ Deck not found. Please try again.")
+        else:
+            self.config["deck_name"] = input("Enter Anki deck name: ").strip()
+
+        # Get fields
+        fields = self.get_deck_fields(self.config["deck_name"])
+        if fields:
+            print(f"\nAvailable fields in '{self.config['deck_name']}':")
+            for i, field in enumerate(fields, 1):
+                print(f"  {i}. {field}")
+            print()
+
+            # Text field
+            while True:
+                text_field_input = input(
+                    "Enter field name containing text to read (or number): "
+                ).strip()
+
+                if text_field_input.isdigit():
+                    idx = int(text_field_input) - 1
+                    if 0 <= idx < len(fields):
+                        self.config["text_field"] = fields[idx]
+                        break
+                    else:
+                        print("❌ Invalid number. Please try again.")
+                        continue
+
+                if text_field_input in fields:
+                    self.config["text_field"] = text_field_input
+                    break
+                else:
+                    print("❌ Field not found. Please try again.")
+
+            # Audio field
+            while True:
+                audio_field_input = input(
+                    "Enter field name where audio should be added (or number): "
+                ).strip()
+
+                if audio_field_input.isdigit():
+                    idx = int(audio_field_input) - 1
+                    if 0 <= idx < len(fields):
+                        self.config["audio_field"] = fields[idx]
+                        break
+                    else:
+                        print("❌ Invalid number. Please try again.")
+                        continue
+
+                if audio_field_input in fields:
+                    self.config["audio_field"] = audio_field_input
+                    break
+                else:
+                    print("❌ Field not found. Please try again.")
+        else:
+            self.config["text_field"] = input(
+                "Enter field name containing text to read: "
+            ).strip()
+            self.config["audio_field"] = input(
+                "Enter field name where audio should be added: "
+            ).strip()
+
+        print(f"\n✅ Updated deck settings:")
+        print(f"   Deck: {self.config['deck_name']}")
+        print(f"   Text field: {self.config['text_field']}")
+        print(f"   Audio field: {self.config['audio_field']}")
+
+        save = input("\nSave these settings? (y/n): ").strip().lower()
+        if save == "y":
+            self.save_config_to_env()
+
+    def configure_language_settings(self):
+        """Configure language settings"""
+        print("\n🌍 Language Configuration")
+        print("=" * 30)
+
+        # Target language
+        target_language = input(
+            f"Enter target language code (currently: {self.config.get('target_language', 'de')}) [de]: "
+        ).strip()
+        if target_language:
+            self.config["target_language"] = target_language
+            self.config["language_code"] = target_language
+
+        # Mother language
+        mother_language = input(
+            f"Enter mother language code (currently: {self.config.get('mother_language', 'en')}) [en]: "
+        ).strip()
+        if mother_language:
+            self.config["mother_language"] = mother_language
+
+        print(f"\n✅ Updated language settings:")
+        print(f"   Target language: {self.config['target_language']}")
+        print(f"   Mother language: {self.config['mother_language']}")
+
+        save = input("\nSave these settings? (y/n): ").strip().lower()
+        if save == "y":
+            self.save_config_to_env()
+
+    def configure_api_settings(self):
+        """Configure API settings"""
+        print("\n🔑 API Configuration")
+        print("=" * 25)
+
+        # Gemini API
+        gemini_key = input(
+            f"Enter Gemini API key (currently: {'*' * 20 if self.config.get('gemini_api_key') else 'Not set'}): "
+        ).strip()
+        if gemini_key:
+            self.config["gemini_api_key"] = gemini_key
+
+        # ElevenLabs API
+        elevenlabs_key = input(
+            f"Enter ElevenLabs API key (currently: {'*' * 20 if self.config.get('api_key') else 'Not set'}): "
+        ).strip()
+        if elevenlabs_key:
+            self.config["api_key"] = elevenlabs_key
+
+        # Voice ID
+        voice_id = input(
+            f"Enter ElevenLabs voice ID (currently: {self.config.get('voice_id', 'Not set')}): "
+        ).strip()
+        if voice_id:
+            self.config["voice_id"] = voice_id
+
+        print(f"\n✅ Updated API settings:")
+        print(
+            f"   Gemini API: {'✅ Configured' if self.config.get('gemini_api_key') else '❌ Not configured'}"
+        )
+        print(
+            f"   ElevenLabs API: {'✅ Configured' if self.config.get('api_key') else '❌ Not configured'}"
+        )
+        print(f"   Voice ID: {self.config.get('voice_id', 'Not set')}")
+
+        save = input("\nSave these settings? (y/n): ").strip().lower()
+        if save == "y":
+            self.save_config_to_env()
+
+    def show_current_config(self):
+        """Show current configuration"""
+        print("\n📋 Current Configuration")
+        print("=" * 30)
+        print(f"Deck: {self.config.get('deck_name', 'Not set')}")
+        print(f"Text field: {self.config.get('text_field', 'Not set')}")
+        print(f"Audio field: {self.config.get('audio_field', 'Not set')}")
+        print(f"Target language: {self.config.get('target_language', 'Not set')}")
+        print(f"Mother language: {self.config.get('mother_language', 'Not set')}")
+        print(
+            f"Gemini API: {'✅ Configured' if self.config.get('gemini_api_key') else '❌ Not configured'}"
+        )
+        print(
+            f"ElevenLabs API: {'✅ Configured' if self.config.get('api_key') else '❌ Not configured'}"
+        )
+        print(f"Voice ID: {self.config.get('voice_id', 'Not set')}")
+        print()
+
     def show_menu(self):
         """Show main menu options"""
         print("\n🎯 What would you like to do?")
         print("=" * 40)
-        print("1. Generate German content with Gemini")
-        print("2. Add audio to existing cards")
-        print("3. Both (generate content + add audio)")
-        print("4. Exit")
+        print("1. Generate vocabulary (words & phrases)")
+        print("2. Generate grammar rules with pronunciation tips")
+        print("3. Add audio to existing cards")
+        print("4. Both (generate vocabulary + add audio)")
+        print("5. Both (generate grammar + add audio)")
+        print("6. Configure settings")
+        print("7. Exit")
         print()
 
     def run(self):
@@ -802,17 +1292,25 @@ class AnkiAudioGenerator:
         # Step 4: Show menu and process
         while True:
             self.show_menu()
-            choice = input("Enter your choice (1-4): ").strip()
+            choice = input("Enter your choice (1-7): ").strip()
 
             if choice == "1":
-                # Generate content only
+                # Generate vocabulary content only
                 success = self.generate_and_add_content()
                 if not success:
-                    print("❌ Content generation failed")
+                    print("❌ Vocabulary generation failed")
                 else:
-                    print("✅ Content generation completed!")
+                    print("✅ Vocabulary generation completed!")
 
             elif choice == "2":
+                # Generate grammar content only
+                success = self.generate_and_add_grammar_content()
+                if not success:
+                    print("❌ Grammar generation failed")
+                else:
+                    print("✅ Grammar generation completed!")
+
+            elif choice == "3":
                 # Add audio only
                 success = self.process_deck()
                 if not success:
@@ -820,8 +1318,8 @@ class AnkiAudioGenerator:
                 else:
                     print("✅ Audio processing completed!")
 
-            elif choice == "3":
-                # Both
+            elif choice == "4":
+                # Both vocabulary + audio
                 success1 = self.generate_and_add_content()
                 if success1:
                     print("\n" + "=" * 50)
@@ -829,23 +1327,65 @@ class AnkiAudioGenerator:
                     success2 = self.process_deck()
                     if success2:
                         print(
-                            "✅ Both content generation and audio processing completed!"
+                            "✅ Both vocabulary generation and audio processing completed!"
                         )
                     else:
-                        print("⚠️ Content generated but audio processing failed")
+                        print("⚠️ Vocabulary generated but audio processing failed")
                 else:
-                    print("❌ Content generation failed")
+                    print("❌ Vocabulary generation failed")
 
-            elif choice == "4":
+            elif choice == "5":
+                # Both grammar + audio
+                success1 = self.generate_and_add_grammar_content()
+                if success1:
+                    print("\n" + "=" * 50)
+                    print("Now adding audio to all cards...")
+                    success2 = self.process_deck()
+                    if success2:
+                        print(
+                            "✅ Both grammar generation and audio processing completed!"
+                        )
+                    else:
+                        print("⚠️ Grammar generated but audio processing failed")
+                else:
+                    print("❌ Grammar generation failed")
+
+            elif choice == "6":
+                # Configure settings
+                print("\n⚙️ Configuration Menu")
+                print("=" * 30)
+                print("1. Change deck and field settings")
+                print("2. Change language settings")
+                print("3. Change API settings")
+                print("4. View current configuration")
+                print("5. Back to main menu")
+
+                config_choice = input("Enter your choice (1-5): ").strip()
+
+                if config_choice == "1":
+                    self.configure_deck_settings()
+                elif config_choice == "2":
+                    self.configure_language_settings()
+                elif config_choice == "3":
+                    self.configure_api_settings()
+                elif config_choice == "4":
+                    self.show_current_config()
+                elif config_choice == "5":
+                    continue
+                else:
+                    print("❌ Invalid choice")
+                    continue
+
+            elif choice == "7":
                 print("👋 Goodbye!")
                 return True
 
             else:
-                print("❌ Invalid choice. Please enter 1-4.")
+                print("❌ Invalid choice. Please enter 1-7.")
                 continue
 
             # Ask if user wants to continue
-            if choice in ["1", "2", "3"]:
+            if choice in ["1", "2", "3", "4", "5"]:
                 continue_choice = (
                     input("\nWould you like to do something else? (y/n): ")
                     .strip()
