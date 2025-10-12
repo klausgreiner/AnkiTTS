@@ -1,0 +1,608 @@
+#separator:tab
+#html:true
+sein [sound:1757852598858.mp3]	<table><tbody><tr><td>to be</td></tr></tbody></table>
+haben [sound:1757852611502.mp3]	to have
+werden [sound:1757852623493.mp3]	to become / will
+können[sound:ttsMP3.com_VoiceText_2025-9-19_8-36-9.mp3]	can / to be able to
+müssen [sound:1757852655685.mp3]	must / have to
+wollen [sound:1757852662994.mp3]	want
+gehen [sound:1757852674662.mp3]	to go
+kommen [sound:1757852689613.mp3]	<table><tbody><tr><td>to come</td></tr></tbody></table>
+machen [sound:1757852698502.mp3]	to do / make
+sagen [sound:1757852710163.mp3]	to say
+sehen [sound:1757852715368.mp3]	to see
+mann [sound:1757852720730.mp3]	man
+frau [sound:1757852728642.mp3]	women
+Kind [sound:1757852736798.mp3]	Child
+Stadt [sound:1757852752168.mp3]	City
+Haus [sound:1757852757844.mp3]	house
+Arbeit [sound:1757852766264.mp3]	work / job
+Frage [sound:1757852771614.mp3]	Question
+Zeit [sound:1757852774941.mp3]	time
+und [sound:1757852777740.mp3]	and
+aber [sound:1757852781246.mp3]	but
+oder [sound:1757852786863.mp3]	or
+wenn [sound:1757852793309.mp3]	if / when
+weil[sound:ttsMP3.com_VoiceText_2025-9-19_8-26-44.mp3]	because
+heute [sound:1757852858334.mp3]	today
+gestern [sound:1757852863729.mp3]	yesterday
+morgen [sound:1757852870772.mp3]	tomorrow / morning
+jetzt [sound:1757852880535.mp3]	NOW
+immer [sound:1757852890325.mp3]	always
+oft [sound:1757852895098.mp3]	often
+selten [sound:1757852908279.mp3]	seldom / rarely
+viel [sound:1757852919234.mp3]	much / a lot
+wenig[sound:ttsMP3.com_VoiceText_2025-9-23_19-45-44.mp3]	little / few
+neu [sound:1757852931522.mp3]	new
+Ich bin heute müde. [sound:1757933909793.mp3]	I am tired today.
+Gestern war das Wetter schön.[sound:ttsMP3.com_VoiceText_2025-9-18_11-37-14.mp3]	Yesterday the weather was nice.
+<strong>Morgen gehe ich in die Stadt.</strong> [sound:1757933967811.mp3]	Tomorrow I’m going to the city
+<div><b>Ich will jetzt essen.</b>[sound:ttsMP3.com_VoiceText_2025-9-18_11-29-0.mp3]</div>	<div>I want to eat now.</div>
+<div><b>Sie ist immer pünktlich.</b></div> [sound:1757934021048.mp3]	<div>She is always on time</div>
+<div><b>Er kommt oft zu spät.</b></div> [sound:1757934031867.mp3]	<div>He often comes late.</div>
+<div><b>Ich sehe sie selten.</b></div> [sound:1757934049063.mp3]	<div>I seldom see her.</div>
+<div><b>Wir haben viel Arbeit.</b></div> [sound:1757934060840.mp3]	<div>We have a lot of work</div>
+<div><b>Sie hat wenig Zeit.</b></div> [sound:1757934075477.mp3]	<div>She has little time</div>
+<div><b>Das ist ein neues Haus.</b></div> [sound:1757934087049.mp3]	<div>That is a new house.</div>
+<div><b>Der Mann sagt nichts.</b></div> [sound:1757934097924.mp3]	<div>The man says nothing</div>
+<div><b>Die Frau fragt viel.</b></div> [sound:1757934109710.mp3]	<div>The woman asks a lot</div>
+<div><b>Das Kind macht Lärm.&nbsp;</b>[sound:ttsMP3.com_VoiceText_2025-9-15_8-2-11.mp3]</div>	The child is making noise.<br>
+Ich kann Deutsch sprechen[sound:ttsMP3.com_VoiceText_2025-9-15_8-3-0.mp3]	I can speak German.
+Wir müssen arbeiten[sound:ttsMP3.com_VoiceText_2025-9-15_8-3-33.mp3]	We must work.
+<strong>Willst du kommen oder bleiben?</strong>[sound:ttsMP3.com_VoiceText_2025-9-15_8-3-59.mp3]	Do you want to come or stay?
+<strong>Wenn du Zeit hast, gehen wir.</strong><br>&nbsp;[sound:ttsMP3.com_VoiceText_2025-9-15_8-4-24.mp3]	If you have time, we’ll go.
+<strong>Wie geht es dir?</strong>[sound:ttsMP3.com_VoiceText_2025-9-15_8-4-51.mp3]	How are you?
+<strong>Ich werde morgen in Berlin sein.</strong>[sound:ttsMP3.com_VoiceText_2025-9-15_8-5-12.mp3]	I will be in Berlin tomorrow.
+Ich bleibe zu Hause, weil ich müde bin[sound:ttsMP3.com_VoiceText_2025-9-15_8-5-42.mp3]	I’m staying at home because I am tired.
+essen [sound:1757934393854.mp3]	to eat
+trinken [sound:1757934400634.mp3]	to drink
+kaufen [sound:1757934409896.mp3]	to buy
+bezahlen [sound:1757934416917.mp3]	to pay
+lesen [sound:1757934421338.mp3]	to read
+schreiben [sound:1757934427555.mp3]	to write
+sprechen [sound:1757934435718.mp3]	to speak
+fragen [sound:1757934439458.mp3]	to ask
+fahren [sound:1757934446947.mp3]	to drive / ride
+nehmen[sound:ttsMP3.com_VoiceText_2025-9-15_8-7-42.mp3]	to take
+Tisch [sound:1757934480756.mp3]	table
+Stuhl[sound:ttsMP3.com_VoiceText_2025-9-23_19-49-35.mp3]	chair
+Auto [sound:1757934493163.mp3]	car
+Zug [sound:1757934498254.mp3]	train
+Bus [sound:1757934501365.mp3]	bus
+Straße [sound:1757934511107.mp3]	street
+Laden [sound:1757934515972.mp3]	shop
+Freund [sound:1757934521463.mp3]	friend
+Tag [sound:1757934526330.mp3]	day
+Nacht [sound:1757934534032.mp3]	night
+Frühstück [sound:1757934570316.mp3]	breakfast
+Abendessen [sound:1757934580550.mp3]	dinner / supper
+Mittagessen [sound:1757934589056.mp3]	lunch
+Wasser [sound:1758018863615.mp3]	water
+Bier [sound:1758018869097.mp3]	beer
+wein [sound:1758018874724.mp3]	wine
+Brot [sound:1758018879595.mp3]	bread
+Milch [sound:1758018883088.mp3]	milk
+Fleisch [sound:1758018887392.mp3]	meat
+Fisch [sound:1758018899195.mp3]	fish
+Gemüse [sound:1758018913593.mp3]	<table><tbody><tr><td>vegetables</td></tr></tbody></table><table><tbody><tr><td></td></tr></tbody></table>
+Obst [sound:1758018918683.mp3]	Fruit
+Suppe [sound:1758018925712.mp3]	Soup
+Salz [sound:1758018929781.mp3]	salt
+Zucker [sound:1758018934601.mp3]	sugar
+Kaffe [sound:1758018943010.mp3]	coffee
+Tee [sound:1758018947105.mp3]	tea
+Uhr [sound:1758018953840.mp3]	Clock / watch
+Stunde[sound:ttsMP3.com_VoiceText_2025-9-23_20-6-44.mp3]	hour
+Minute [sound:1758018966487.mp3]	minute
+Woche [sound:1758018971024.mp3]	Week
+Jahr [sound:1758018975061.mp3]	year
+Heute abend [sound:1758018986114.mp3]	tonight
+morgen&nbsp;früh [sound:1758018997099.mp3]	tomorrow morning
+gestern Abend [sound:1758019005108.mp3]	last night
+bahnhof [sound:1758019015327.mp3]	train station
+Flughafen [sound:1758019022176.mp3]	airport
+Hotel [sound:1758019026299.mp3]	hotel
+Zimmer [sound:1758019035394.mp3]	room
+Schlüssel[sound:ttsMP3.com_VoiceText_2025-9-16_7-37-32.mp3]	key
+Geld[sound:ttsMP3.com_VoiceText_2025-9-16_7-38-18.mp3]	money
+Rechnung [sound:ttsMP3.com_VoiceText_2025-9-16_7-38-38.mp3]	bill / check
+Hilfe[sound:ttsMP3.com_VoiceText_2025-9-16_7-39-1.mp3]	help
+Ich trinke Wasser.[sound:ttsMP3.com_VoiceText_2025-9-16_7-39-42.mp3]	I drink water
+Ein Bier, bitte.[sound:ttsMP3.com_VoiceText_2025-9-16_7-40-7.mp3]	A beer, please.
+<strong>Der Wein ist teuer.</strong>[sound:ttsMP3.com_VoiceText_2025-9-16_7-40-31.mp3]	The wine is expensive
+Das Brot ist frisch.[sound:ttsMP3.com_VoiceText_2025-9-16_7-40-56.mp3]	The brad is fresh
+<strong>Ich brauche Milch für den Kaffee.</strong><br>[sound:ttsMP3.com_VoiceText_2025-9-16_7-41-19.mp3]	I need milk for the coffee.
+<strong>Das Fleisch ist lecker.</strong><br>[sound:ttsMP3.com_VoiceText_2025-9-16_7-41-57.mp3]	The meat is tasty.
+<strong>Der Fisch ist frisch.</strong><br>[sound:ttsMP3.com_VoiceText_2025-9-16_7-42-32.mp3]	The fish is fresh.
+Gemüse ist gesund. [sound:ttsMP3.com_VoiceText_2025-9-16_7-42-54.mp3]	Vegetables are healthy.
+<strong>Ich esse Obst zum Frühstück.</strong>[sound:ttsMP3.com_VoiceText_2025-9-16_7-43-18.mp3]	I eat fruit for breakfast.
+<strong>Die Suppe ist warm.</strong>[sound:ttsMP3.com_VoiceText_2025-9-19_8-30-56.mp3]	The soup is warm.
+<strong>Hast du eine Uhr?</strong>[sound:ttsMP3.com_VoiceText_2025-9-16_7-43-53.mp3]	Do you have a watch?
+<strong>Der Zug kommt in zehn Minuten.</strong><br>[sound:ttsMP3.com_VoiceText_2025-9-16_7-44-23.mp3]	The train arrives in ten minutes.
+<strong>Wir treffen uns morgen früh.</strong>[sound:ttsMP3.com_VoiceText_2025-9-16_7-44-44.mp3]	We meet tomorrow morning.
+<strong>Das Hotel hat ein schönes Zimmer.</strong>[sound:ttsMP3.com_VoiceText_2025-9-16_7-45-7.mp3]	The hotel has a nice room.
+<strong>Die Rechnung, bitte.</strong>[sound:ttsMP3.com_VoiceText_2025-9-16_7-45-26.mp3]	The bill, please.
+vielleicht[sound:ttsMP3.com_VoiceText_2025-9-18_10-49-45.mp3]	maybe perhaps
+wahrscheinlich[sound:ttsMP3.com_VoiceText_2025-9-18_10-50-11.mp3]	probably
+[sound:ttsMP3.com_VoiceText_2025-9-18_10-51-1.mp3]möglich	possible
+unmöglich[sound:ttsMP3.com_VoiceText_2025-9-18_10-51-28.mp3]	impossible
+[sound:ttsMP3.com_VoiceText_2025-9-18_10-51-42.mp3]eigentlich	actually
+[sound:ttsMP3.com_VoiceText_2025-9-18_10-52-9.mp3]wirklich	really
+sogar[sound:ttsMP3.com_VoiceText_2025-9-18_10-52-23.mp3]	even
+[sound:ttsMP3.com_VoiceText_2025-9-18_10-52-38.mp3]nur	only
+[sound:ttsMP3.com_VoiceText_2025-9-18_10-53-2.mp3]auch	also
+[sound:ttsMP3.com_VoiceText_2025-9-18_10-53-18.mp3]Noch	still,yet
+schon[sound:ttsMP3.com_VoiceText_2025-9-18_10-53-48.mp3]	already
+erst[sound:ttsMP3.com_VoiceText_2025-9-18_10-54-16.mp3]	only,just
+dann[sound:ttsMP3.com_VoiceText_2025-9-18_10-55-13.mp3]	then
+[sound:ttsMP3.com_VoiceText_2025-9-18_10-55-27.mp3]danach	afterwards
+[sound:ttsMP3.com_VoiceText_2025-9-18_10-55-47.mp3]deshalb	therefore
+deswegen[sound:ttsMP3.com_VoiceText_2025-9-18_10-56-14.mp3]	because of that
+[sound:ttsMP3.com_VoiceText_2025-9-18_10-56-31.mp3]trotzdem	nevertheless / no entanto
+[sound:ttsMP3.com_VoiceText_2025-9-18_10-56-53.mp3]jedoch	"however /&nbsp;<span style=""white-space-collapse: preserve;"">no entanto</span><div><div><pre></pre></div><div><div></div></div></div><div></div><div><br></div>"
+obwohl[sound:ttsMP3.com_VoiceText_2025-9-18_10-57-13.mp3]	"although /&nbsp;<span style=""white-space-collapse: preserve;"">Embora</span>"
+falls[sound:ttsMP3.com_VoiceText_2025-9-18_10-57-33.mp3]	in case<br>
+[sound:ttsMP3.com_VoiceText_2025-9-18_10-57-49.mp3]während	while,during
+[sound:ttsMP3.com_VoiceText_2025-9-18_10-58-9.mp3]sobald	as soon as
+[sound:ttsMP3.com_VoiceText_2025-9-18_10-58-25.mp3]überall	everywhere
+[sound:ttsMP3.com_VoiceText_2025-9-18_10-58-43.mp3]nirgends	nowhere
+[sound:ttsMP3.com_VoiceText_2025-9-18_10-59-2.mp3]irgendwann	"sometime<br><div><strong></strong></div>
+<ul>
+<li>
+<div><em>irgendwann</em> = “at one undefined point in time” (one time).</div>
+</li>
+<li>
+<div><em>manchmal</em> = “repeatedly but not always” (occasional frequency).</div></li></ul>"
+[sound:ttsMP3.com_VoiceText_2025-9-18_10-59-50.mp3]<strong>Vielleicht gehe ich heute ins Kino.</strong>	Maybe I’ll go to the cinema today
+[sound:ttsMP3.com_VoiceText_2025-9-18_11-20-41.mp3]Es ist wahrscheinlich zu spät	It is probably too late.
+[sound:ttsMP3.com_VoiceText_2025-9-18_11-21-0.mp3]<strong>Ist das möglich?</strong>	Is that possible?
+[sound:ttsMP3.com_VoiceText_2025-9-18_11-21-27.mp3]<strong>Das ist unmöglich ohne Geld.</strong>	That is impossible without money.
+Ich wollte eigentlich zu Hause bleiben[sound:ttsMP3.com_VoiceText_2025-9-18_11-21-46.mp3]	I actually wanted to stay at home.
+<strong>Es ist wirklich kalt draußen.</strong>[sound:ttsMP3.com_VoiceText_2025-9-18_11-22-4.mp3]	It is really cold outside.
+[sound:ttsMP3.com_VoiceText_2025-9-18_11-22-20.mp3]<strong>Ich habe es sogar gestern gesehen.</strong>	"I even saw it yesterday.<strong>&nbsp;</strong><span style=""white-space-collapse: preserve;"">Eu até vi isso ontem</span>"
+[sound:ttsMP3.com_VoiceText_2025-9-18_11-22-36.mp3]Ich bin müde, trotzdem arbeite ich weiter	I am tired, nevertheless I keep working.
+[sound:ttsMP3.com_VoiceText_2025-9-18_11-22-58.mp3]<strong>Ich komme, sobald ich Zeit habe.</strong>	I’ll come as soon as I have time.
+[sound:ttsMP3.com_VoiceText_2025-9-18_11-23-17.mp3]<strong>Während sie liest, trinkt er Kaffee.</strong>	While she reads, he drinks coffee
+[sound:ttsMP3.com_VoiceText_2025-9-19_8-6-38.mp3]öffnen	<table><tbody><tr><td></td></tr></tbody></table><table><tbody><tr><td>to open</td></tr></tbody></table>
+[sound:ttsMP3.com_VoiceText_2025-9-19_8-6-56.mp3]schließen	to close
+warten[sound:ttsMP3.com_VoiceText_2025-9-19_8-7-16.mp3]	to wait
+[sound:ttsMP3.com_VoiceText_2025-9-19_8-7-37.mp3]beginnen	to start, begin
+[sound:ttsMP3.com_VoiceText_2025-9-19_8-7-53.mp3]enden	<table><tbody><tr><td></td></tr></tbody></table><table><tbody><tr><td>to end</td></tr></tbody></table>
+[sound:ttsMP3.com_VoiceText_2025-9-19_8-8-10.mp3]arbeiten	<table><tbody><tr><td></td></tr></tbody></table><table><tbody><tr><td>to work</td></tr></tbody></table>
+spielen[sound:4.mp3]	<table><tbody><tr><td></td></tr></tbody></table><table><tbody><tr><td>to play</td></tr></tbody></table>
+[sound:ttsMP3.com_VoiceText_2025-9-19_8-8-48.mp3]lernen	to learn
+[sound:ttsMP3.com_VoiceText_2025-9-19_8-9-6.mp3]verstehen	to understand
+[sound:ttsMP3.com_VoiceText_2025-9-19_8-9-19.mp3]erklären	to explain
+[sound:ttsMP3.com_VoiceText_2025-9-19_8-9-43.mp3]kaufen	to buy
+verkaufen[sound:ttsMP3.com_VoiceText_2025-9-19_8-10-8.mp3]	to sell
+kosten [sound:1758280233288.mp3]	<table><tbody><tr><td></td></tr></tbody></table><table><tbody><tr><td>to cost</td></tr></tbody></table>
+billig[sound:ttsMP3.com_VoiceText_2025-9-19_8-11-2.mp3]	cheap
+teuer[sound:ttsMP3.com_VoiceText_2025-9-19_8-11-17.mp3]	expensive
+[sound:ttsMP3.com_VoiceText_2025-9-19_8-11-32.mp3]schnell	fast
+[sound:ttsMP3.com_VoiceText_2025-9-19_8-11-47.mp3]langsam	slow
+[sound:ttsMP3.com_VoiceText_2025-9-19_8-12-8.mp3]groß	big
+<table><tbody><tr><td>klein</td></tr></tbody></table><table><tbody><tr><td></td></tr></tbody></table>[sound:ttsMP3.com_VoiceText_2025-9-19_8-12-29.mp3]	<table><tbody><tr><td></td><td>small</td></tr></tbody></table><table><tbody><tr><td></td></tr></tbody></table>
+[sound:ttsMP3.com_VoiceText_2025-9-19_8-12-43.mp3]jung	young
+alt[sound:ttsMP3.com_VoiceText_2025-9-19_8-12-59.mp3]	old
+[sound:ttsMP3.com_VoiceText_2025-9-19_8-13-12.mp3]schön	beautiful
+[sound:ttsMP3.com_VoiceText_2025-9-19_8-13-32.mp3]hässlich	ugly
+[sound:ttsMP3.com_VoiceText_2025-9-19_8-13-47.mp3]einfach	simple,easy
+[sound:ttsMP3.com_VoiceText_2025-9-19_8-14-7.mp3]schwierig	difficult
+[sound:ttsMP3.com_VoiceText_2025-9-19_8-14-27.mp3]<strong>Der Laden öffnet um acht Uhr.</strong>	The shop opens at eight o’clock.
+[sound:ttsMP3.com_VoiceText_2025-9-19_8-14-53.mp3]<strong>Bitte schließen Sie die Tür.</strong>	Please close the door.)
+[sound:ttsMP3.com_VoiceText_2025-9-19_8-15-19.mp3]<strong>Wir müssen hier warten.</strong>	We have to wait here.)
+[sound:ttsMP3.com_VoiceText_2025-9-19_8-15-33.mp3]<strong>Der Film beginnt um neun Uhr.</strong>	The movie starts at nine o’clock.
+[sound:ttsMP3.com_VoiceText_2025-9-19_8-15-49.mp3]<strong>Die Party endet um Mitternacht.</strong>	The party ends at midnight.)
+[sound:ttsMP3.com_VoiceText_2025-9-19_8-16-6.mp3]<strong>Ich arbeite morgen im Büro.</strong>	I work in the office tomorrow.
+<strong>Die Kinder spielen draußen.</strong>[sound:ttsMP3.com_VoiceText_2025-9-19_8-16-24.mp3]	The children are playing outside.
+[sound:ttsMP3.com_VoiceText_2025-9-19_8-16-41.mp3]<strong>Ich will Deutsch lernen.</strong>	I want to learn German.
+[sound:ttsMP3.com_VoiceText_2025-9-19_8-17-1.mp3]<strong>Verstehst du die Frage?</strong>	Do you understand the question?
+[sound:ttsMP3.com_VoiceText_2025-9-19_8-17-22.mp3]Der Lehrer erklärt die Aufgabe.	The teacher explains the task
+[sound:ttsMP3.com_VoiceText_2025-9-19_8-17-41.mp3]<strong>Ich kaufe ein neues Auto.</strong>	I’m buying a new car.
+[sound:ttsMP3.com_VoiceText_2025-9-19_8-18-1.mp3]<strong>Sie verkauft Gemüse auf dem Markt.</strong>	She sells vegetables at the market.
+[sound:ttsMP3.com_VoiceText_2025-9-19_8-18-17.mp3]<strong>Wie viel kostet das?</strong>	How much does that cost?
+<strong>Das Hotel ist teuer, aber schön.</strong>[sound:ttsMP3.com_VoiceText_2025-9-19_8-18-33.mp3]	The hotel is expensive but beautiful.
+[sound:ttsMP3.com_VoiceText_2025-9-19_8-18-56.mp3]<strong>Deutsch ist manchmal schwierig, aber auch interessant.</strong>	German is sometimes difficult but also interesting.
+[sound:ttsMP3.com_VoiceText_2025-9-23_8-39-48.mp3]Bahnhof	<table><tbody><tr><td></td></tr></tbody></table><table><tbody><tr><td>train station</td></tr></tbody></table>
+[sound:ttsMP3.com_VoiceText_2025-9-23_8-40-39.mp3]U-Bahn	subway / metro
+[sound:ttsMP3.com_VoiceText_2025-9-23_8-40-57.mp3]Straßenbahn	<table><tbody><tr><td></td></tr></tbody></table><table><tbody><tr><td>tram</td></tr></tbody></table>
+[sound:ttsMP3.com_VoiceText_2025-9-23_8-41-12.mp3]Haltestelle	stop (bus/tram)
+Fahrkarte[sound:ttsMP3.com_VoiceText_2025-9-23_8-41-42.mp3]	ticket
+[sound:ttsMP3.com_VoiceText_2025-9-23_8-41-56.mp3]Zug	<table><tbody><tr><td></td></tr></tbody></table><table><tbody><tr><td>train</td></tr></tbody></table>
+[sound:ttsMP3.com_VoiceText_2025-9-23_8-42-16.mp3]Flugzeug	airplane
+Gepäck[sound:ttsMP3.com_VoiceText_2025-9-23_8-42-33.mp3]	<table><tbody><tr><td></td></tr></tbody></table><table><tbody><tr><td>luggage</td></tr></tbody></table>
+[sound:ttsMP3.com_VoiceText_2025-9-23_8-42-47.mp3]Tasche	<table><tbody><tr><td></td></tr></tbody></table><table><tbody><tr><td>bag</td></tr></tbody></table>
+[sound:ttsMP3.com_VoiceText_2025-9-23_8-44-15.mp3]Koffer	suitcase
+Weg[sound:ttsMP3.com_VoiceText_2025-9-23_8-44-34.mp3]	<table><tbody><tr><td></td></tr></tbody></table><table><tbody><tr><td>way / route</td></tr></tbody></table>
+[sound:ttsMP3.com_VoiceText_2025-9-23_8-44-47.mp3]rechts	right
+[sound:ttsMP3.com_VoiceText_2025-9-23_8-45-14.mp3]links	left
+geradeaus[sound:ttsMP3.com_VoiceText_2025-9-23_8-45-30.mp3]	<table><tbody><tr><td></td></tr></tbody></table><table><tbody><tr><td>straight ahead</td></tr></tbody></table>
+[sound:ttsMP3.com_VoiceText_2025-9-23_8-45-49.mp3]<strong>Wo ist der Bahnhof?</strong>	Where is the train station?
+[sound:ttsMP3.com_VoiceText_2025-9-23_8-46-9.mp3]<strong>Ich nehme die U-Bahn.</strong>	I am taking the subway.
+[sound:ttsMP3.com_VoiceText_2025-9-23_8-46-31.mp3]<strong>Die Straßenbahn hält hier.</strong>	The tram stops here.
+<strong>Ich brauche eine Fahrkarte nach Berlin.</strong>[sound:ttsMP3.com_VoiceText_2025-9-23_8-47-11.mp3]	I need a ticket to Berlin.
+<strong>Der Zug kommt in zehn Minuten.</strong>[sound:ttsMP3.com_VoiceText_2025-9-23_8-47-32.mp3]	The train arrives in ten minutes.
+<strong>Das Flugzeug startet um acht Uhr.</strong>[sound:ttsMP3.com_VoiceText_2025-9-23_8-47-49.mp3]	The airplane departs at eight o’clock.
+<strong>Mein Gepäck ist schwer.</strong>[sound:ttsMP3.com_VoiceText_2025-9-23_8-48-12.mp3]	My luggage is heavy.
+<strong>Der Koffer ist im Auto.</strong>[sound:ttsMP3.com_VoiceText_2025-9-23_8-48-36.mp3]	The suitcase is in the car.
+[sound:ttsMP3.com_VoiceText_2025-9-23_8-48-52.mp3]<strong>Gehen Sie geradeaus und dann links.</strong>	Go straight ahead and then left.
+[sound:ttsMP3.com_VoiceText_2025-9-23_8-49-23.mp3]<strong>Der Weg zum Flughafen ist lang.</strong>	The way to the airport is long.
+tschüss[sound:ttsMP3.com_VoiceText_2025-9-24_8-30-21.mp3]	bye
+hallo [sound:1758713441168.mp3]	hello
+bitte [sound:1758713449547.mp3]	please
+danke [sound:1758713453162.mp3]	thanks
+gern [sound:1758713458917.mp3]	glad / sure
+ja [sound:1758713464954.mp3]	yes
+nein [sound:1758713467771.mp3]	no
+vielleicht [sound:1758713473902.mp3]	maybe
+klar [sound:1758713479489.mp3]	of course / sure
+wirklich [sound:1758713484526.mp3]	really
+genau [sound:1758713491219.mp3]	really
+natürlich [sound:1758713502826.mp3]	of course
+super [sound:1758713505978.mp3]	great
+toll [sound:1758713509575.mp3]	awesome
+später [sound:1758713550963.mp3]	later
+manchmal [sound:1758713560825.mp3]	sometimes
+der Computer [sound:1758715335233.mp3]	The computer
+das Smartphone [sound:1758715335252.mp3]	The phone&nbsp;
+das Internet [sound:1758715335289.mp3]	The internet
+die Cloud [sound:1758715335407.mp3]	the cloud
+die Daten [sound:1758715335438.mp3]	data / information / the data
+das Gerät [sound:1758715335456.mp3]	"<strong>appliance</strong> (e.g., kitchen appliance)<br>
+<strong>gadget</strong><br>
+<strong>machine / equipment</strong>"
+Ich benutze den Computer täglich. [sound:1758715335488.mp3]	I use the computer every day.
+Das Internet ist sehr wichtig für mich. [sound:1758715335505.mp3]	The internet is very important to me
+Diese App ist sehr nützlich. [sound:1758715335538.mp3]	This app is very useful.
+Ich brauche ein neues Smartphone. [sound:1758715335557.mp3]	I need a new smartphone
+Die Technologie entwickelt sich schnell. [sound:1758715335590.mp3]	The technology is developing rapidly
+der Umsatz [sound:1758716267893.mp3]	the revenue/turnover
+die Konkurrenz [sound:1758716267913.mp3]	the competition
+Geschäfte abwickeln [sound:1758716267937.mp3]	to conduct business
+eine Firma gründen [sound:1758716267970.mp3]	to start a company
+der Hund [sound:1758716462183.mp3]	the dog
+die Hündin [sound:1758716462224.mp3]	the female dog (bitch)
+die Leine [sound:1758716462241.mp3]	the leash
+das Halsband [sound:1758716462257.mp3]	the collar
+der Knochen [sound:1758716462278.mp3]	the bone
+der Schwanz [sound:1758716462299.mp3]	the tail
+bellen [sound:1758716462325.mp3]	to bark
+spielen [sound:1758716462350.mp3]	to play
+der Welpe [sound:1758716462374.mp3]	the puppy
+die Rasse [sound:1758716462400.mp3]	the breed
+Geh Gassi mit dem Hund! [sound:1758716462424.mp3]	Go for a walk with the dog!
+Er ist ein guter Junge. [sound:1758716462450.mp3]	He is a good boy.
+Sie ist eine gute Hündin. [sound:1758716462474.mp3]	She is a good girl.
+Gib dem Hund einen Knochen. [sound:1758716462500.mp3]	Give the dog a bone.
+Der Hund bellt laut. [sound:1758716462525.mp3]	The dog barks loudly.
+Wo ist die Leine? [sound:1758716462550.mp3]	Where is the leash?
+Komm her, Hund! [sound:1758716462575.mp3]	Come here, dog!
+Er liebt es zu spielen. [sound:1758716462599.mp3]	He loves to play.
+Welche Rasse ist dein Hund? [sound:1758716462625.mp3]	What breed is your dog?
+Der Hund wedelt mit dem Schwanz. [sound:1758716462650.mp3]	The dog wags its tail.
+Umzug [sound:1758920752537.mp3]	Move, Relocation
+Einwanderung [sound:1758920752630.mp3]	Immigration
+Auswanderung [sound:1758920752645.mp3]	Emigration
+Visum [sound:1758920752662.mp3]	Visa
+Aufenthaltserlaubnis [sound:1758920752685.mp3]	Residence permit
+Anmeldung [sound:1758920752711.mp3]	Registration (with authorities)
+Abmeldung [sound:1758920752736.mp3]	Deregistration (with authorities)
+Mietvertrag [sound:1758920752760.mp3]	Rental agreement, Lease
+Kaution [sound:1758920752785.mp3]	Security deposit
+Nachbarschaft [sound:1758920752810.mp3]	Neighborhood
+Integration [sound:1758920752835.mp3]	Integration
+Sprachkurs [sound:1758920752861.mp3]	Language course
+Krankenversicherung [sound:1758920752885.mp3]	Health insurance
+Bankkonto [sound:1758920752909.mp3]	Bank account
+Behörde [sound:1758920752936.mp3]	Authority, Government agency
+Formular [sound:1758920752961.mp3]	Form, Application
+Unterkunft [sound:1758920752985.mp3]	Accommodation
+Zoll [sound:1758920753010.mp3]	Customs / Alfândega<br>
+Arbeitserlaubnis [sound:1758920753035.mp3]	Work permit
+Wohnungssuche [sound:1758920753061.mp3]	Apartment search
+Ich plane, nach Deutschland zu ziehen. [sound:1758920753085.mp3]	I am planning to move to Germany.
+Ich brauche ein Visum für Deutschland. [sound:1758920753110.mp3]	I need a visa for Germany.
+Wo kann ich mich anmelden? [sound:1758920753135.mp3]	Where can I register?
+Ich suche eine Wohnung in [Stadt]. [sound:1758920753159.mp3]	I am looking for an apartment in [city].
+Was kostet die Miete pro Monat? [sound:1758920753185.mp3]	How much is the rent per month?
+Ich möchte ein Bankkonto eröffnen. [sound:1758920753211.mp3]	I would like to open a bank account.
+Wo ist das nächste Bürgeramt? [sound:1758920753235.mp3]	Where is the nearest citizen's office?
+Ich möchte einen Deutschkurs besuchen. [sound:1758920753259.mp3]	I would like to attend a German course.
+Wie finde ich eine Krankenversicherung? [sound:1758920753285.mp3]	How do I find health insurance?
+Kann ich hier Englisch sprechen? [sound:1758920753309.mp3]	Can I speak English here?
+Ich bin neu hier in Deutschland. [sound:1758920753335.mp3]	I'm new here in Germany.
+Wie lange dauert die Bearbeitung des Visums? [sound:1758920753360.mp3]	How long does the visa processing take?
+Ich suche Arbeit in Deutschland. [sound:1758920753385.mp3]	I'm looking for work in Germany.
+Wo kann ich mich über Arbeitserlaubnisse informieren? [sound:1758920753410.mp3]	Where can I get information about work permits?
+Ich habe meinen Umzug organisiert. [sound:1758920753435.mp3]	I have organized my move.
+Ich muss mich beim Einwohnermeldeamt anmelden. [sound:1758920753459.mp3]	I need to register at the registration office.
+Wie ist die Lebensqualität in [Stadt]? [sound:1758920753486.mp3]	What is the quality of life like in [city]?
+Gibt es hier gute Möglichkeiten zur Integration? [sound:1758920753510.mp3]	Are there good opportunities for integration here?
+Ich lerne Deutsch, um mich besser zu integrieren. [sound:1758920753535.mp3]	I'm learning German to integrate better.
+Ich freue mich darauf, Deutschland kennenzulernen. [sound:1758920753560.mp3]	I am looking forward to getting to know Germany.
+das Wetter [sound:1759364882923.mp3]	the weather
+das Wochenende [sound:1759364883027.mp3]	the weekend
+die Freizeit [sound:1759364883056.mp3]	free time / leisure
+der Beruf [sound:1759364883081.mp3]	Career / profession
+der Urlaub [sound:1759364883100.mp3]	vacation
+die Reise [sound:1759364883124.mp3]	the trip/journey
+das Hobby [sound:1759364883148.mp3]	hobby
+die Unterhaltung [sound:1759364883171.mp3]	the conversation / entertainment
+der Sport [sound:1759364883196.mp3]	sports
+die Neuigkeiten [sound:1759364883220.mp3]	the news
+Wie geht es Ihnen? [sound:1759364883245.mp3]	How are you? (formal)
+Wie geht es dir? [sound:1759364883276.mp3]	How are you? (informal)
+Schönes Wetter heute, nicht wahr? [sound:1759364883301.mp3]	Nice weather today, isn't it?
+Was machen Sie beruflich? [sound:1759364883326.mp3]	What do you do for a living?
+Was haben Sie am Wochenende gemacht? [sound:1759364883351.mp3]	What did you do on the weekend?
+Haben Sie einen schönen Tag! [sound:1759364883376.mp3]	Have a nice day!
+Ich wünsche Ihnen einen schönen Tag! [sound:1759364883401.mp3]	I wish you a nice day!
+Entschuldigung, woher kommen Sie? [sound:1759364883426.mp3]	Excuse me, where are you from?
+Ich bin neu hier. [sound:1759364883451.mp3]	I'm new here.
+Das ist aber interessant! [sound:1759364883476.mp3]	That's very interesting!
+der Supermarkt [sound:1759364938725.mp3]	the supermarket
+das Regal [sound:1759364938753.mp3]	the shelf
+die Kasse [sound:1759364938787.mp3]	the checkout
+der Einkaufswagen [sound:1759364938804.mp3]	the shopping cart
+das Angebot [sound:1759364938838.mp3]	the special offer
+die Abteilung [sound:1759364938870.mp3]	the department
+das Gemüse [sound:1759364938886.mp3]	the vegetables
+das Obst [sound:1759364938920.mp3]	the fruit
+die Molkerei [sound:1759364938937.mp3]	the dairy
+das Fleisch [sound:1759364938969.mp3]	the meat
+Wo finde ich das Brot? [sound:1759364938985.mp3]	Where can I find the bread?
+Was kostet das? [sound:1759364939003.mp3]	How much does that cost?
+Ich suche nach... [sound:1759364939037.mp3]	I am looking for...
+Haben Sie ... im Angebot? [sound:1759364939070.mp3]	Do you have ... on sale?
+Kann ich mit Karte zahlen? [sound:1759364939087.mp3]	Can I pay with a card?
+Ich brauche eine Tüte. [sound:1759364939121.mp3]	I need a bag.
+Das ist alles, danke. [sound:1759364939155.mp3]	That's all, thank you.
+Wo ist die nächste Kasse? [sound:1759364939189.mp3]	Where is the nearest checkout?
+Dieses Produkt ist abgelaufen. [sound:1759364939221.mp3]	This product is expired.
+Ich möchte das zurückgeben. [sound:1759364939256.mp3]	I would like to return this.
+"Verb Always Second (Usually)
+
+Ich gehe heute nach Hause. (I am going home today.) [sound:1759874988356.mp3]"	"<b>Rule:</b> Verb Always Second (Usually)
+
+<b>Explanation:</b> In a main clause, the *conjugated* verb is almost always in the second position. It's like a strict dance partner leading the sentence.
+
+<b>Pronunciation Tip:</b> Focus on the stress of the words around the verb to help it stand out.
+
+<b>Example:</b> Ich gehe heute nach Hause. (I am going home today.)
+<b>Pronunciation:</b> ɪç ˈɡeːə ˈhɔʏtə nax ˈhaʊ̯zə.
+
+<b>Memory Tip:</b> Imagine the verb as a bouncer: one thing gets in *first*, *then* the verb, then everything else waits in line!"
+"Time, Manner, Place Order
+
+Ich arbeite heute fleißig zu Hause. (I am working diligently at home today.) [sound:1759874988435.mp3]"	"<b>Rule:</b> Time, Manner, Place Order
+
+<b>Explanation:</b> When you have details about *when*, *how*, and *where* something happens, the usual order is: Time, Manner, Place (TeMPo).
+
+<b>Pronunciation Tip:</b> Say 'TeMPo' clearly to remind yourself of the order. (Like the tissue box).
+
+<b>Example:</b> Ich arbeite heute fleißig zu Hause. (I am working diligently at home today.)
+<b>Pronunciation:</b> ɪç ˈʔaʁbaɪtə ˈhɔʏtə ˈflaɪ̯sɪç t͡suː ˈhaʊ̯zə.
+
+<b>Memory Tip:</b> Picture a TeMPo box (Time, Manner, Place) sitting on your desk. What's the TIME? How are you (MANNER)? WHERE is it (PLACE)?"
+"Subordinate Clauses Flip the Verb!
+
+Ich weiß, dass er nach Hause geht. (I know that he is going home.) [sound:1759874988514.mp3]"	"<b>Rule:</b> Subordinate Clauses Flip the Verb!
+
+<b>Explanation:</b> In a subordinate clause (introduced by words like *dass, weil, wenn*), the conjugated verb goes to the very *end*.
+
+<b>Pronunciation Tip:</b> Listen carefully for the 'end' of the clause. The verb will be there!
+
+<b>Example:</b> Ich weiß, dass er nach Hause geht. (I know that he is going home.)
+<b>Pronunciation:</b> ɪç vaɪ̯s, das ɛʁ nax ˈhaʊ̯zə ˈɡeːt.
+
+<b>Memory Tip:</b> Imagine the subordinate clause as a train car where the verb (the engine) gets pushed to the *back*."
+"Question Inversion (Yes/No)
+
+Gehst du nach Hause? (Are you going home?) [sound:1759874988542.mp3]"	"<b>Rule:</b> Question Inversion (Yes/No)
+
+<b>Explanation:</b> In Yes/No questions, the verb comes *first*, before the subject. It's a switch!
+
+<b>Pronunciation Tip:</b> The intonation rises sharply at the end of a yes/no question. 
+
+<b>Example:</b> Gehst du nach Hause? (Are you going home?)
+<b>Pronunciation:</b> ˈɡeːst duː nax ˈhaʊ̯zə?
+
+<b>Memory Tip:</b> Think of it like flipping a switch: the verb *starts* the question, lighting up the possibility of an answer."
+"Question Word First
+
+Warum gehst du nach Hause? (Why are you going home?) [sound:1759874988563.mp3]"	"<b>Rule:</b> Question Word First
+
+<b>Explanation:</b> When a question starts with a question word (like *wer, was, wann, wo, warum*), it comes *first*, then the verb, then the subject.
+
+<b>Pronunciation Tip:</b> Stress the question word to signal the type of information you're looking for.
+
+<b>Example:</b> Warum gehst du nach Hause? (Why are you going home?)
+<b>Pronunciation:</b> vaˈʁʊm ˈɡeːst duː nax ˈhaʊ̯zə?
+
+<b>Memory Tip:</b> Imagine the question word as a spotlight shining on *what* you want to know. It naturally goes first."
+die Frage [sound:1759877188522.mp3]	"a pergunta
+
+Pronunciation: [diː ˈfʁaːɡə]"
+der Alltag [sound:1759877188594.mp3]	"o dia a dia
+
+Pronunciation: [deːɐ ˈalˌtaːk]"
+die Gewohnheit [sound:1759877188627.mp3]	"o hábito
+
+Pronunciation: [diː ɡəˈvoːnhaɪ̯t]"
+das Problem [sound:1759877188647.mp3]	"o problema
+
+Pronunciation: [das pʁoˈbleːm]"
+die Lösung [sound:1759877188667.mp3]	"a solução
+
+Pronunciation: [diː ˈløːzʊŋ]"
+der Termin [sound:1759877188686.mp3]	"o compromisso
+
+Pronunciation: [deːɐ tɛʁˈmiːn]"
+die Entscheidung [sound:1759877188712.mp3]	"a decisão
+
+Pronunciation: [diː ɛntˈʃaɪ̯dʊŋ]"
+der Unterschied [sound:1759877188736.mp3]	"a diferença
+
+Pronunciation: [deːɐ ˈʊntɐˌʃiːt]"
+das Gefühl [sound:1759877188761.mp3]	"o sentimento
+
+Pronunciation: [das ɡəˈfyːl]"
+die Möglichkeit [sound:1759877188786.mp3]	"a possibilidade
+
+Pronunciation: [diː ˈmøːklɪçkaɪ̯t]"
+Wie geht es dir heute? [sound:1759877188810.mp3]	"Como você está hoje?
+
+Pronunciation: [viː ɡeːt ɛs diːɐ̯ ˈhɔɪ̯tə?]"
+Was machst du gerade? [sound:1759877188836.mp3]	"O que você está fazendo agora?
+
+Pronunciation: [vas ˈmaxst duː ɡəˈʁaːdə?]"
+Hast du gut geschlafen? [sound:1759877188861.mp3]	"Você dormiu bem?
+
+Pronunciation: [hast duː ɡuːt ɡəˈʃlaːfn̩?]"
+Was gibt es zum Frühstück? [sound:1759877188885.mp3]	"O que tem para o café da manhã?
+
+Pronunciation: [vas ɡɪpt ɛs tʊm ˈfʁyːʃtʏk?]"
+Wie war dein Tag? [sound:1759877188911.mp3]	"Como foi seu dia?
+
+Pronunciation: [viː vaːɐ̯ daɪ̯n taːk?]"
+Was möchtest du essen? [sound:1759877188936.mp3]	"O que você gostaria de comer?
+
+Pronunciation: [vas ˈmœçtəst duː ˈɛsn̩?]"
+Was ist dein Lieblingsessen? [sound:1759877188961.mp3]	"Qual é sua comida favorita?
+
+Pronunciation: [vas ɪst daɪ̯n ˈliːplɪŋsˌɛsn̩?]"
+Was sind deine Pläne für heute? [sound:1759877188986.mp3]	"Quais são seus planos para hoje?
+
+Pronunciation: [vas zɪnt ˈdaɪ̯nə ˈplɛːnə fyːɐ ˈhɔɪ̯tə?]"
+Kannst du mir helfen? [sound:1759877189011.mp3]	"Você pode me ajudar?
+
+Pronunciation: [kanst duː miːɐ ˈhɛlfn̩?]"
+Wo ist die Toilette? [sound:1759877189036.mp3]	"Onde fica o banheiro?
+
+Pronunciation: [voː ɪst diː toˈlɛtə?]"
+die Frage [sound:1759972125117.mp3]	"a pergunta
+
+Pronunciation: [diː ˈfʁaːɡə]"
+das Warum [sound:1759972125215.mp3]	"o porquê
+
+Pronunciation: [das vaˈʁʊm]"
+die Antwort [sound:1759972125235.mp3]	"a resposta
+
+Pronunciation: [diː ˈantvɔʁt]"
+die Erklärung [sound:1759972125253.mp3]	"a explicação
+
+Pronunciation: [diː ɛɐ̯ˈklɛːʁʊŋ]"
+der Zweifel [sound:1759972125275.mp3]	"a dúvida
+
+Pronunciation: [deːɐ̯ ˈtsvaɪfl̩]"
+Wie kann ich fragen? [sound:1759972125300.mp3]	"Como posso perguntar?
+
+Pronunciation: [viː kan ɪç ˈfʁaːɡən?]"
+Was bedeutet das? [sound:1759972125326.mp3]	"O que isso significa?
+
+Pronunciation: [vas bəˈdɔʏtət das?]"
+Kannst du das wiederholen? [sound:1759972125359.mp3]	"Você pode repetir isso?
+
+Pronunciation: [kanst duː das ˈviːdɐˌhoːlən?]"
+Wie sagt man das auf Deutsch? [sound:1759972125384.mp3]	"Como se diz isso em alemão?
+
+Pronunciation: [viː zaːkt man das aʊf dɔʏ̯tʃ?]"
+Habe ich das richtig verstanden? [sound:1759972125409.mp3]	"Eu entendi isso corretamente?
+
+Pronunciation: [haːbə ɪç das ˈʁɪçtɪç fɛɐ̯ˈʃtandən?]"
+Wer? [sound:1760138302971.mp3]	"Quem?
+
+Pronunciation: [veːɐ̯]"
+Wessen? [sound:1760138303017.mp3]	"De quem?
+
+Pronunciation: [ˈvɛsn̩]"
+Wem? [sound:1760138303060.mp3]	"A quem?
+
+Pronunciation: [veːm]"
+Wen? [sound:1760138303097.mp3]	"Quem? (objeto direto)
+
+Pronunciation: [veːn]"
+Was? [sound:1760138303128.mp3]	"O que?
+
+Pronunciation: [vas]"
+Wann? [sound:1760138303142.mp3]	"Quando?
+
+Pronunciation: [van]"
+Wo? [sound:1760138303180.mp3]	"Onde?
+
+Pronunciation: [voː]"
+Woher? [sound:1760138303195.mp3]	"De onde?
+
+Pronunciation: [voˈheːɐ̯]"
+Wohin? [sound:1760138303231.mp3]	"Para onde?
+
+Pronunciation: [voˈhɪn]"
+Warum? [sound:1760138303245.mp3]	"Por que?
+
+Pronunciation: [vaˈʁʊm]"
+Wofür? [sound:1760138303279.mp3]	"Para que?
+
+Pronunciation: [voˈfyːɐ̯]"
+Wie? [sound:1760138303295.mp3]	"Como?
+
+Pronunciation: [viː]"
+Wie viel? [sound:1760138303327.mp3]	"Quanto?
+
+Pronunciation: [viː fiːl]"
+Wie viele? [sound:1760138303344.mp3]	"Quantos/as?
+
+Pronunciation: [viː ˈfiːlə]"
+Welche? [sound:1760138303378.mp3]	"Qual?
+
+Pronunciation: [ˈvɛlçə]"
+Die Frage [sound:1760138303395.mp3]	"A pergunta
+
+Pronunciation: [diː ˈfʁaːɡə]"
+Wer ist das? [sound:1760138303427.mp3]	"Quem é esse/essa?
+
+Pronunciation: [veːɐ̯ ɪst das]"
+Wessen Buch ist das? [sound:1760138303445.mp3]	"De quem é este livro?
+
+Pronunciation: [ˈvɛsn̩ buːx ɪst das]"
+Wem gehört das? [sound:1760138303478.mp3]	"De quem é isso?
+
+Pronunciation: [veːm ɡəˈhøːɐ̯t das]"
+Wen suchst du? [sound:1760138303496.mp3]	"Quem você está procurando?
+
+Pronunciation: [veːn zuːkst duː]"
+Was machst du? [sound:1760138303528.mp3]	"O que você está fazendo?
+
+Pronunciation: [vas maxst duː]"
+Wann kommst du? [sound:1760138303545.mp3]	"Quando você vem?
+
+Pronunciation: [van kɔmst duː]"
+Wo wohnst du? [sound:1760138303561.mp3]	"Onde você mora?
+
+Pronunciation: [voː voːnst duː]"
+Woher kommst du? [sound:1760138303594.mp3]	"De onde você vem?
+
+Pronunciation: [voˈheːɐ̯ kɔmst duː]"
+Wohin gehst du? [sound:1760138303629.mp3]	"Para onde você vai?
+
+Pronunciation: [voˈhɪn ɡeːst duː]"
+Warum bist du traurig? [sound:1760138303645.mp3]	"Por que você está triste?
+
+Pronunciation: [vaˈʁʊm bɪst duː ˈtʁaʊ̯ʁɪç]"
+Wofür brauchst du das? [sound:1760138303678.mp3]	"Para que você precisa disso?
+
+Pronunciation: [voˈfyːɐ̯ bʁaʊ̯xst duː das]"
+Wie geht es dir? [sound:1760138303696.mp3]	"Como você está?
+
+Pronunciation: [viː ɡeːt ɛs diːɐ̯]"
+Wie viel kostet das? [sound:1760138303728.mp3]	"Quanto custa isso?
+
+Pronunciation: [viː fiːl ˈkɔstət das]"
+Wie viele Kinder hast du? [sound:1760138303746.mp3]	"Quantos filhos você tem?
+
+Pronunciation: [viː ˈfiːlə ˈkɪndɐ hast duː]"
+Welche Farbe magst du? [sound:1760138303779.mp3]	"Qual cor você gosta?
+
+Pronunciation: [ˈvɛlçə ˈfaʁbə maːkst duː]"
+Ich habe eine Frage. [sound:1760138303796.mp3]	"Eu tenho uma pergunta.
+
+Pronunciation: [ɪç ˈhaːbə ˈaɪ̯nə ˈfʁaːɡə]"

@@ -1,6 +1,9 @@
-# 🎵 Anki Audio & Content Generator CLI
+# 🎵 AnkiTTS - Complete Anki Learning Toolkit
 
-A command-line tool to generate German vocabulary using Gemini AI and add text-to-speech audio to your Anki cards using ElevenLabs TTS.
+A comprehensive toolkit for German language learning with Anki:
+
+- **Anki Helper**: Generate vocabulary with Gemini AI and add TTS audio with ElevenLabs
+- **Word Analyzer**: Analyze word frequency in your decks to focus on what matters most
 
 ## 🔧 Prerequisites
 
@@ -28,62 +31,136 @@ AnkiConnect is essential for this tool to work. Here's how to install it:
 - Download the `.ankiaddon` file
 - Double-click to install in Anki
 
+## 📁 Project Structure
+
+```
+AnkiTTS/
+├── anki_helper/          # TTS audio generation & card creation
+│   ├── main.py           # Main TTS generator
+│   ├── generate_anki_cards.py  # Create flashcards from word lists
+│   └── requirements.txt  # Dependencies for anki_helper
+│
+├── word_analyzer/        # Word frequency analysis tools
+│   ├── simple_word_analyzer.py    # Basic analyzer (no dependencies)
+│   ├── visual_word_analyzer.py    # Advanced with graphs
+│   ├── word_frequency_analyzer.py # Legacy version
+│   ├── requirements.txt  # Dependencies for visualizations
+│   └── german.txt        # Your Anki deck for analysis
+│
+├── examples/             # Example files and outputs
+│   ├── example_word_list.txt
+│   ├── food_words.txt
+│   └── *.txt (generated cards)
+│
+├── data/                 # Analysis output files
+│   ├── german_word_frequency.json
+│   ├── german_word_frequency.csv
+│   ├── german_word_frequency.txt
+│   └── german_word_frequency_analysis.png
+│
+└── venv/                 # Python virtual environment
+```
+
 ## 📦 Installation
 
-1. **Clone or download this repository**
+```bash
+# Clone the repository
+git clone https://github.com/selmetwa/AnkiTTS.git
+cd AnkiTTS
 
-   ```bash
-   git clone https://github.com/selmetwa/AnkiTTS.git
-   cd AnkiTTS
-   ```
+# Create and activate virtual environment
+python3 -m venv venv
+source venv/bin/activate  # macOS/Linux
+# OR
+venv\Scripts\activate     # Windows
 
-2. **Create and activate virtual environment**
-
-   ```bash
-   # Create virtual environment
-   python3 -m venv venv
-
-   # Activate it
-   source venv/bin/activate  # On macOS/Linux
-   # OR
-   venv\Scripts\activate     # On Windows
-   ```
-
-3. **Install dependencies**
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Create .env file (optional but recommended)**
-   ```bash
-   cp env.example .env
-   # Edit .env with your API keys and configuration
-   ```
+# Install dependencies (choose based on what you need)
+pip install -r anki_helper/requirements.txt    # For TTS and card generation
+pip install -r word_analyzer/requirements.txt  # For word frequency analysis
+```
 
 ## 🚀 Usage
 
-### For first-time setup:
+**⚠️ IMPORTANT: Always activate the virtual environment first!**
 
 ```bash
-python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt && python main.py
+# Activate virtual environment (from project root)
+source venv/bin/activate  # macOS/Linux
+# OR
+venv\Scripts\activate     # Windows
 ```
 
-### For subsequent runs:
+### 1. Anki Helper (TTS & Card Generation)
 
 ```bash
-source venv/bin/activate && python main.py
+# Make sure venv is activated first!
+cd anki_helper
+
+# Generate TTS audio for existing cards
+python3 main.py
+
+# Create new flashcards from word lists
+python3 generate_anki_cards.py --create-example  # Create example template
+python3 generate_anki_cards.py --word-list ../examples/food_words.txt --output new_cards.txt
+
+# Generate from most frequent words
+python3 generate_anki_cards.py --frequency-json ../data/german_word_frequency.json --top-n 30 --output cards.txt
 ```
 
-The CLI will guide you through:
+### Quick One-Liners (from project root)
+
+```bash
+# Activate venv and run main.py
+source venv/bin/activate && cd anki_helper && python3 main.py
+
+# Activate venv and analyze words
+source venv/bin/activate && cd word_analyzer && python3 visual_word_analyzer.py german.txt
+```
+
+### 2. Word Analyzer (Find What to Study)
+
+```bash
+cd word_analyzer
+
+# Simple analysis (no dependencies)
+python3 simple_word_analyzer.py german.txt --top-n 30
+
+# Advanced analysis with graphs
+python3 visual_word_analyzer.py german.txt --top-n 30
+
+# Output files go to ../data/
+```
+
+### Quick Workflow Example
+
+```bash
+# Step 1: Analyze your deck to find common words
+cd word_analyzer
+python3 visual_word_analyzer.py german.txt --top-n 50
+
+# Step 2: Generate practice cards for top words
+cd ../anki_helper
+python3 generate_anki_cards.py \
+  --frequency-json ../data/german_word_frequency.json \
+  --output ../examples/practice_cards.txt \
+  --top-n 20 \
+  --include-phrases
+
+# Step 3: Add TTS audio to all your cards
+python3 main.py
+```
+
+### Main TTS Tool Features
+
+When you run `python3 main.py`, the CLI guides you through:
 
 1. **Anki Setup Check** - Verify Anki is running with AnkiConnect
 2. **Deck Selection** - Choose which Anki deck to process
 3. **Field Configuration** - Select text and audio fields
 4. **API Setup** - Enter your Gemini and ElevenLabs API keys
-5. **Menu Selection** - Choose what you want to do:
+5. **Choose Action**:
    - Generate German content with Gemini
-   - Add audio to existing cards
+   - Add TTS audio to existing cards
    - Both (generate content + add audio)
 
 ## 📋 What You'll Need
@@ -93,52 +170,35 @@ The CLI will guide you through:
 - **Voice ID**: The ElevenLabs voice ID you want to use
 - **Language Code**: e.g., 'de' for German, 'en' for English
 
-### Optional (can be set in .env file):
+### Optional Configuration (.env file)
 
-- **Deck Name**: The name of your Anki deck
-- **Text Field**: The field containing text to convert to speech
-- **Audio Field**: Where to store the generated audio (can be same as text field)
-
-## 🔧 Configuration
-
-### Using .env file (Recommended)
-
-Create a `.env` file in the project directory with your configuration:
+Create a `.env` file in `anki_helper/` directory:
 
 ```bash
-# Copy the example file
-cp env.example .env
-
-# Edit with your values
-nano .env
+cp anki_helper/env.example anki_helper/.env
+# Edit with your API keys
 ```
 
-Example `.env` file:
-
-```env
-GEMINI_API_KEY=your_gemini_api_key_here
-ELEVENLABS_API_KEY=your_elevenlabs_api_key_here
-ELEVENLABS_VOICE_ID=your_voice_id_here
-LANGUAGE_CODE=de
-ANKI_DECK_NAME=German Vocabulary
-TEXT_FIELD=Front
-AUDIO_FIELD=Front
-```
-
-If you use a `.env` file, the script will automatically load these values and skip the interactive prompts for those settings.
+The script will automatically load these values and skip prompts.
 
 ## 🎯 Features
 
-- ✅ **German Content Generation** - Generate German words and phrases using Gemini AI
-- ✅ **Deck Analysis** - Analyze existing deck content to avoid duplicates
-- ✅ **Topic-based Generation** - Generate vocabulary for specific topics
-- ✅ **Interactive CLI** - Step-by-step guidance with menu system
-- ✅ **Automatic Detection** - Deck and field detection
-- ✅ **Audio Generation** - Support for all ElevenLabs voices and languages
+### Anki Helper
+
+- ✅ **TTS Audio Generation** - Add natural-sounding speech to cards with ElevenLabs
+- ✅ **Content Generation** - Generate German vocabulary with Gemini AI
+- ✅ **Card Creation** - Create flashcards from word lists or frequency analysis
+- ✅ **Practice Phrases** - Automatically generate example sentences
 - ✅ **Smart Processing** - Skip cards that already have audio
-- ✅ **Progress Tracking** - Visual progress bars with tqdm
-- ✅ **Error Handling** - Robust error handling and recovery
-- ✅ **Flexible Fields** - Support for appending audio to text or separate fields
+- ✅ **Progress Tracking** - Visual progress bars
+
+### Word Analyzer
+
+- ✅ **Frequency Analysis** - Find the most common words in your deck
+- ✅ **Visual Graphs** - Beautiful charts showing word distribution
+- ✅ **Multiple Formats** - Export to JSON, CSV, TXT, PNG
+- ✅ **Stop Word Filtering** - Automatically removes common German articles/prepositions
+- ✅ **Zero Dependencies Option** - Simple analyzer works without any packages
 
 ## 🔧 Troubleshooting
 

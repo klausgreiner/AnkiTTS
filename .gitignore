@@ -56,3 +56,12 @@ logs/
 # Temporary files
 *.tmp
 *.temp
+
+# Generated output files
+data/*.txt
+data/*.json
+data/*.csv
+data/*.png
+examples/generated_*.txt
+examples/new_cards_*.txt
+examples/*_example.txt

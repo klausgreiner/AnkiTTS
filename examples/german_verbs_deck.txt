@@ -1,0 +1,152 @@
+#separator:tab
+#html:true
+sein [sound:sein_1760274269030.mp3]	
+<strong>Das ist sein.</strong> [sound:phrase_sein_1760274269031.mp3]	Practice phrase with: Das ist sein.
+<strong>Ich habe sein.</strong> [sound:phrase_sein_1760274269032.mp3]	Practice phrase with: Ich habe sein.
+haben [sound:haben_1760274269030.mp3]	
+<strong>Das ist haben.</strong> [sound:phrase_haben_1760274269031.mp3]	Practice phrase with: Das ist haben.
+<strong>Ich habe haben.</strong> [sound:phrase_haben_1760274269032.mp3]	Practice phrase with: Ich habe haben.
+werden [sound:werden_1760274269030.mp3]	
+<strong>Das ist werden.</strong> [sound:phrase_werden_1760274269031.mp3]	Practice phrase with: Das ist werden.
+<strong>Ich habe werden.</strong> [sound:phrase_werden_1760274269032.mp3]	Practice phrase with: Ich habe werden.
+können [sound:können_1760274269030.mp3]	
+<strong>Das ist können.</strong> [sound:phrase_können_1760274269031.mp3]	Practice phrase with: Das ist können.
+<strong>Ich habe können.</strong> [sound:phrase_können_1760274269032.mp3]	Practice phrase with: Ich habe können.
+müssen [sound:müssen_1760274269030.mp3]	
+<strong>Das ist müssen.</strong> [sound:phrase_müssen_1760274269031.mp3]	Practice phrase with: Das ist müssen.
+<strong>Ich habe müssen.</strong> [sound:phrase_müssen_1760274269032.mp3]	Practice phrase with: Ich habe müssen.
+sagen [sound:sagen_1760274269030.mp3]	
+<strong>Das ist sagen.</strong> [sound:phrase_sagen_1760274269031.mp3]	Practice phrase with: Das ist sagen.
+<strong>Ich habe sagen.</strong> [sound:phrase_sagen_1760274269032.mp3]	Practice phrase with: Ich habe sagen.
+machen [sound:machen_1760274269030.mp3]	
+<strong>Das ist machen.</strong> [sound:phrase_machen_1760274269031.mp3]	Practice phrase with: Das ist machen.
+<strong>Ich habe machen.</strong> [sound:phrase_machen_1760274269032.mp3]	Practice phrase with: Ich habe machen.
+geben [sound:geben_1760274269030.mp3]	
+<strong>Das ist geben.</strong> [sound:phrase_geben_1760274269031.mp3]	Practice phrase with: Das ist geben.
+<strong>Ich habe geben.</strong> [sound:phrase_geben_1760274269032.mp3]	Practice phrase with: Ich habe geben.
+kommen [sound:kommen_1760274269030.mp3]	
+<strong>Das ist kommen.</strong> [sound:phrase_kommen_1760274269031.mp3]	Practice phrase with: Das ist kommen.
+<strong>Ich habe kommen.</strong> [sound:phrase_kommen_1760274269032.mp3]	Practice phrase with: Ich habe kommen.
+sollen [sound:sollen_1760274269030.mp3]	
+<strong>Das ist sollen.</strong> [sound:phrase_sollen_1760274269031.mp3]	Practice phrase with: Das ist sollen.
+<strong>Ich habe sollen.</strong> [sound:phrase_sollen_1760274269032.mp3]	Practice phrase with: Ich habe sollen.
+wollen [sound:wollen_1760274269030.mp3]	
+<strong>Das ist wollen.</strong> [sound:phrase_wollen_1760274269031.mp3]	Practice phrase with: Das ist wollen.
+<strong>Ich habe wollen.</strong> [sound:phrase_wollen_1760274269032.mp3]	Practice phrase with: Ich habe wollen.
+gehen [sound:gehen_1760274269030.mp3]	
+<strong>Das ist gehen.</strong> [sound:phrase_gehen_1760274269031.mp3]	Practice phrase with: Das ist gehen.
+<strong>Ich habe gehen.</strong> [sound:phrase_gehen_1760274269032.mp3]	Practice phrase with: Ich habe gehen.
+wissen [sound:wissen_1760274269030.mp3]	
+<strong>Das ist wissen.</strong> [sound:phrase_wissen_1760274269031.mp3]	Practice phrase with: Das ist wissen.
+<strong>Ich habe wissen.</strong> [sound:phrase_wissen_1760274269032.mp3]	Practice phrase with: Ich habe wissen.
+sehen [sound:sehen_1760274269030.mp3]	
+<strong>Das ist sehen.</strong> [sound:phrase_sehen_1760274269031.mp3]	Practice phrase with: Das ist sehen.
+<strong>Ich habe sehen.</strong> [sound:phrase_sehen_1760274269032.mp3]	Practice phrase with: Ich habe sehen.
+lassen [sound:lassen_1760274269030.mp3]	
+<strong>Das ist lassen.</strong> [sound:phrase_lassen_1760274269031.mp3]	Practice phrase with: Das ist lassen.
+<strong>Ich habe lassen.</strong> [sound:phrase_lassen_1760274269032.mp3]	Practice phrase with: Ich habe lassen.
+stehen [sound:stehen_1760274269030.mp3]	
+<strong>Das ist stehen.</strong> [sound:phrase_stehen_1760274269031.mp3]	Practice phrase with: Das ist stehen.
+<strong>Ich habe stehen.</strong> [sound:phrase_stehen_1760274269032.mp3]	Practice phrase with: Ich habe stehen.
+finden [sound:finden_1760274269030.mp3]	
+<strong>Das ist finden.</strong> [sound:phrase_finden_1760274269031.mp3]	Practice phrase with: Das ist finden.
+<strong>Ich habe finden.</strong> [sound:phrase_finden_1760274269032.mp3]	Practice phrase with: Ich habe finden.
+bleiben [sound:bleiben_1760274269030.mp3]	
+<strong>Das ist bleiben.</strong> [sound:phrase_bleiben_1760274269031.mp3]	Practice phrase with: Das ist bleiben.
+<strong>Ich habe bleiben.</strong> [sound:phrase_bleiben_1760274269032.mp3]	Practice phrase with: Ich habe bleiben.
+liegen [sound:liegen_1760274269030.mp3]	
+<strong>Das ist liegen.</strong> [sound:phrase_liegen_1760274269031.mp3]	Practice phrase with: Das ist liegen.
+<strong>Ich habe liegen.</strong> [sound:phrase_liegen_1760274269032.mp3]	Practice phrase with: Ich habe liegen.
+heißen [sound:heißen_1760274269030.mp3]	
+<strong>Das ist heißen.</strong> [sound:phrase_heißen_1760274269031.mp3]	Practice phrase with: Das ist heißen.
+<strong>Ich habe heißen.</strong> [sound:phrase_heißen_1760274269032.mp3]	Practice phrase with: Ich habe heißen.
+denken [sound:denken_1760274269030.mp3]	
+<strong>Das ist denken.</strong> [sound:phrase_denken_1760274269031.mp3]	Practice phrase with: Das ist denken.
+<strong>Ich habe denken.</strong> [sound:phrase_denken_1760274269032.mp3]	Practice phrase with: Ich habe denken.
+nehmen [sound:nehmen_1760274269030.mp3]	
+<strong>Das ist nehmen.</strong> [sound:phrase_nehmen_1760274269031.mp3]	Practice phrase with: Das ist nehmen.
+<strong>Ich habe nehmen.</strong> [sound:phrase_nehmen_1760274269032.mp3]	Practice phrase with: Ich habe nehmen.
+tun [sound:tun_1760274269030.mp3]	
+<strong>Das ist tun.</strong> [sound:phrase_tun_1760274269031.mp3]	Practice phrase with: Das ist tun.
+<strong>Ich habe tun.</strong> [sound:phrase_tun_1760274269032.mp3]	Practice phrase with: Ich habe tun.
+dürfen [sound:dürfen_1760274269030.mp3]	
+<strong>Das ist dürfen.</strong> [sound:phrase_dürfen_1760274269031.mp3]	Practice phrase with: Das ist dürfen.
+<strong>Ich habe dürfen.</strong> [sound:phrase_dürfen_1760274269032.mp3]	Practice phrase with: Ich habe dürfen.
+glauben [sound:glauben_1760274269030.mp3]	
+<strong>Das ist glauben.</strong> [sound:phrase_glauben_1760274269031.mp3]	Practice phrase with: Das ist glauben.
+<strong>Ich habe glauben.</strong> [sound:phrase_glauben_1760274269032.mp3]	Practice phrase with: Ich habe glauben.
+halten [sound:halten_1760274269030.mp3]	
+<strong>Das ist halten.</strong> [sound:phrase_halten_1760274269031.mp3]	Practice phrase with: Das ist halten.
+<strong>Ich habe halten.</strong> [sound:phrase_halten_1760274269032.mp3]	Practice phrase with: Ich habe halten.
+nennen [sound:nennen_1760274269030.mp3]	
+<strong>Das ist nennen.</strong> [sound:phrase_nennen_1760274269031.mp3]	Practice phrase with: Das ist nennen.
+<strong>Ich habe nennen.</strong> [sound:phrase_nennen_1760274269032.mp3]	Practice phrase with: Ich habe nennen.
+mögen [sound:mögen_1760274269030.mp3]	
+<strong>Das ist mögen.</strong> [sound:phrase_mögen_1760274269031.mp3]	Practice phrase with: Das ist mögen.
+<strong>Ich habe mögen.</strong> [sound:phrase_mögen_1760274269032.mp3]	Practice phrase with: Ich habe mögen.
+zeigen [sound:zeigen_1760274269030.mp3]	
+<strong>Das ist zeigen.</strong> [sound:phrase_zeigen_1760274269031.mp3]	Practice phrase with: Das ist zeigen.
+<strong>Ich habe zeigen.</strong> [sound:phrase_zeigen_1760274269032.mp3]	Practice phrase with: Ich habe zeigen.
+führen [sound:führen_1760274269030.mp3]	
+<strong>Das ist führen.</strong> [sound:phrase_führen_1760274269031.mp3]	Practice phrase with: Das ist führen.
+<strong>Ich habe führen.</strong> [sound:phrase_führen_1760274269032.mp3]	Practice phrase with: Ich habe führen.
+sprechen [sound:sprechen_1760274269030.mp3]	
+<strong>Das ist sprechen.</strong> [sound:phrase_sprechen_1760274269031.mp3]	Practice phrase with: Das ist sprechen.
+<strong>Ich habe sprechen.</strong> [sound:phrase_sprechen_1760274269032.mp3]	Practice phrase with: Ich habe sprechen.
+bringen [sound:bringen_1760274269030.mp3]	
+<strong>Das ist bringen.</strong> [sound:phrase_bringen_1760274269031.mp3]	Practice phrase with: Das ist bringen.
+<strong>Ich habe bringen.</strong> [sound:phrase_bringen_1760274269032.mp3]	Practice phrase with: Ich habe bringen.
+leben [sound:leben_1760274269030.mp3]	
+<strong>Das ist leben.</strong> [sound:phrase_leben_1760274269031.mp3]	Practice phrase with: Das ist leben.
+<strong>Ich habe leben.</strong> [sound:phrase_leben_1760274269032.mp3]	Practice phrase with: Ich habe leben.
+fahren [sound:fahren_1760274269030.mp3]	
+<strong>Das ist fahren.</strong> [sound:phrase_fahren_1760274269031.mp3]	Practice phrase with: Das ist fahren.
+<strong>Ich habe fahren.</strong> [sound:phrase_fahren_1760274269032.mp3]	Practice phrase with: Ich habe fahren.
+meinen [sound:meinen_1760274269030.mp3]	
+<strong>Das ist meinen.</strong> [sound:phrase_meinen_1760274269031.mp3]	Practice phrase with: Das ist meinen.
+<strong>Ich habe meinen.</strong> [sound:phrase_meinen_1760274269032.mp3]	Practice phrase with: Ich habe meinen.
+fragen [sound:fragen_1760274269030.mp3]	
+<strong>Das ist fragen.</strong> [sound:phrase_fragen_1760274269031.mp3]	Practice phrase with: Das ist fragen.
+<strong>Ich habe fragen.</strong> [sound:phrase_fragen_1760274269032.mp3]	Practice phrase with: Ich habe fragen.
+kennen [sound:kennen_1760274269030.mp3]	
+<strong>Das ist kennen.</strong> [sound:phrase_kennen_1760274269031.mp3]	Practice phrase with: Das ist kennen.
+<strong>Ich habe kennen.</strong> [sound:phrase_kennen_1760274269032.mp3]	Practice phrase with: Ich habe kennen.
+gelten [sound:gelten_1760274269030.mp3]	
+<strong>Das ist gelten.</strong> [sound:phrase_gelten_1760274269031.mp3]	Practice phrase with: Das ist gelten.
+<strong>Ich habe gelten.</strong> [sound:phrase_gelten_1760274269032.mp3]	Practice phrase with: Ich habe gelten.
+stellen [sound:stellen_1760274269030.mp3]	
+<strong>Das ist stellen.</strong> [sound:phrase_stellen_1760274269031.mp3]	Practice phrase with: Das ist stellen.
+<strong>Ich habe stellen.</strong> [sound:phrase_stellen_1760274269032.mp3]	Practice phrase with: Ich habe stellen.
+spielen [sound:spielen_1760274269030.mp3]	
+<strong>Das ist spielen.</strong> [sound:phrase_spielen_1760274269031.mp3]	Practice phrase with: Das ist spielen.
+<strong>Ich habe spielen.</strong> [sound:phrase_spielen_1760274269032.mp3]	Practice phrase with: Ich habe spielen.
+arbeiten [sound:arbeiten_1760274269030.mp3]	
+<strong>Das ist arbeiten.</strong> [sound:phrase_arbeiten_1760274269031.mp3]	Practice phrase with: Das ist arbeiten.
+<strong>Ich habe arbeiten.</strong> [sound:phrase_arbeiten_1760274269032.mp3]	Practice phrase with: Ich habe arbeiten.
+brauchen [sound:brauchen_1760274269030.mp3]	
+<strong>Das ist brauchen.</strong> [sound:phrase_brauchen_1760274269031.mp3]	Practice phrase with: Das ist brauchen.
+<strong>Ich habe brauchen.</strong> [sound:phrase_brauchen_1760274269032.mp3]	Practice phrase with: Ich habe brauchen.
+folgen [sound:folgen_1760274269030.mp3]	
+<strong>Das ist folgen.</strong> [sound:phrase_folgen_1760274269031.mp3]	Practice phrase with: Das ist folgen.
+<strong>Ich habe folgen.</strong> [sound:phrase_folgen_1760274269032.mp3]	Practice phrase with: Ich habe folgen.
+lernen [sound:lernen_1760274269030.mp3]	
+<strong>Das ist lernen.</strong> [sound:phrase_lernen_1760274269031.mp3]	Practice phrase with: Das ist lernen.
+<strong>Ich habe lernen.</strong> [sound:phrase_lernen_1760274269032.mp3]	Practice phrase with: Ich habe lernen.
+bestehen [sound:bestehen_1760274269030.mp3]	
+<strong>Das ist bestehen.</strong> [sound:phrase_bestehen_1760274269031.mp3]	Practice phrase with: Das ist bestehen.
+<strong>Ich habe bestehen.</strong> [sound:phrase_bestehen_1760274269032.mp3]	Practice phrase with: Ich habe bestehen.
+verstehen [sound:verstehen_1760274269030.mp3]	
+<strong>Das ist verstehen.</strong> [sound:phrase_verstehen_1760274269031.mp3]	Practice phrase with: Das ist verstehen.
+<strong>Ich habe verstehen.</strong> [sound:phrase_verstehen_1760274269032.mp3]	Practice phrase with: Ich habe verstehen.
+setzen [sound:setzen_1760274269030.mp3]	
+<strong>Das ist setzen.</strong> [sound:phrase_setzen_1760274269031.mp3]	Practice phrase with: Das ist setzen.
+<strong>Ich habe setzen.</strong> [sound:phrase_setzen_1760274269032.mp3]	Practice phrase with: Ich habe setzen.
+bekommen [sound:bekommen_1760274269030.mp3]	
+<strong>Das ist bekommen.</strong> [sound:phrase_bekommen_1760274269031.mp3]	Practice phrase with: Das ist bekommen.
+<strong>Ich habe bekommen.</strong> [sound:phrase_bekommen_1760274269032.mp3]	Practice phrase with: Ich habe bekommen.
+beginnen [sound:beginnen_1760274269030.mp3]	
+<strong>Das ist beginnen.</strong> [sound:phrase_beginnen_1760274269031.mp3]	Practice phrase with: Das ist beginnen.
+<strong>Ich habe beginnen.</strong> [sound:phrase_beginnen_1760274269032.mp3]	Practice phrase with: Ich habe beginnen.
+erzählen [sound:erzählen_1760274269030.mp3]	
+<strong>Das ist erzählen.</strong> [sound:phrase_erzählen_1760274269031.mp3]	Practice phrase with: Das ist erzählen.
+<strong>Ich habe erzählen.</strong> [sound:phrase_erzählen_1760274269032.mp3]	Practice phrase with: Ich habe erzählen.

@@ -546,39 +546,67 @@ AUDIO_FIELD={self.config.get('audio_field', 'Front')}
             return "Could not analyze existing deck content."
 
     def generate_german_content(
-        self, topic, num_words, num_phrases, existing_content=""
+        self, topic, num_words, num_phrases, existing_content="", word_list=None
     ):
         """Generate German words and phrases using Gemini"""
         try:
             target_lang = self.config.get("target_language", "de")
             mother_lang = self.config.get("mother_language", "en")
 
-            prompt = f"""
-            Generate {target_lang.upper()} vocabulary for the topic: "{topic}"
-            
-            Requirements:
-            - Generate {num_words} {target_lang.upper()} words with {mother_lang.upper()} translations and IPA phonetic transcription
-            - Generate {num_phrases} {target_lang.upper()} phrases with {mother_lang.upper()} translations and IPA phonetic transcription
-            - Words are always accompanied by the article — for example, der Mann (the man).
-            - Include IPA phonetic notation for pronunciation
-            - Format as JSON with this structure:
-            {{
-                "words": [
-                    {{"german": "{target_lang.upper()} word", "english": "{mother_lang.upper()} translation", "phonetic": "IPA transcription"}},
-                    ...
-                ],
-                "phrases": [
-                    {{"german": "{target_lang.upper()} phrase", "english": "{mother_lang.upper()} translation", "phonetic": "IPA transcription"}},
-                    ...
-                ]
-            }}
-            
-            Context from existing deck: {existing_content}
-            
-            Make sure the content is relevant to the topic and appropriate for language learning.
-            Avoid duplicating words/phrases that might already be in the deck.
-            Include accurate IPA phonetic notation for proper pronunciation.
-            """
+            if word_list:
+                # User provided specific words - generate translations and phrases
+                words_str = ", ".join(word_list)
+                prompt = f"""
+                For these {target_lang.upper()} words: {words_str}
+                
+                Requirements:
+                - For EACH word, provide the {mother_lang.upper()} translation and IPA phonetic transcription
+                - Words should include the article if it's a noun (e.g., der Mann, die Frau, das Kind)
+                - Generate {num_phrases} practice phrases/sentences for EACH word showing how to use it in context
+                - Each phrase needs {mother_lang.upper()} translation and IPA phonetic transcription
+                - Format as JSON with this structure:
+                {{
+                    "words": [
+                        {{"german": "{target_lang.upper()} word", "english": "{mother_lang.upper()} translation", "phonetic": "IPA transcription"}},
+                        ...
+                    ],
+                    "phrases": [
+                        {{"german": "{target_lang.upper()} phrase/sentence", "english": "{mother_lang.upper()} translation", "phonetic": "IPA transcription"}},
+                        ...
+                    ]
+                }}
+                
+                Make sure phrases are practical and demonstrate actual usage of these words.
+                Include accurate IPA phonetic notation for proper pronunciation.
+                """
+            else:
+                # Original topic-based generation
+                prompt = f"""
+                Generate {target_lang.upper()} vocabulary for the topic: "{topic}"
+                
+                Requirements:
+                - Generate {num_words} {target_lang.upper()} words with {mother_lang.upper()} translations and IPA phonetic transcription
+                - Generate {num_phrases} {target_lang.upper()} phrases with {mother_lang.upper()} translations and IPA phonetic transcription
+                - Words are always accompanied by the article — for example, der Mann (the man).
+                - Include IPA phonetic notation for pronunciation
+                - Format as JSON with this structure:
+                {{
+                    "words": [
+                        {{"german": "{target_lang.upper()} word", "english": "{mother_lang.upper()} translation", "phonetic": "IPA transcription"}},
+                        ...
+                    ],
+                    "phrases": [
+                        {{"german": "{target_lang.upper()} phrase", "english": "{mother_lang.upper()} translation", "phonetic": "IPA transcription"}},
+                        ...
+                    ]
+                }}
+                
+                Context from existing deck: {existing_content}
+                
+                Make sure the content is relevant to the topic and appropriate for language learning.
+                Avoid duplicating words/phrases that might already be in the deck.
+                Include accurate IPA phonetic notation for proper pronunciation.
+                """
 
             response = self.gemini_client.generate_content(prompt)
 
@@ -832,25 +860,63 @@ AUDIO_FIELD={self.config.get('audio_field', 'Front')}
         print(f"\n🤖 Step 3: Generate German Content")
         print("=" * 50)
 
-        # Get topic
-        topic = input(
-            "Enter topic for German vocabulary (e.g., 'food', 'travel', 'business'): "
-        ).strip()
-        if not topic:
-            print("❌ Topic is required")
-            return False
+        # Check if user wants to use a word list file
+        print("Options:")
+        print("  1. Enter a topic (e.g., 'food', 'travel', 'business')")
+        print("  2. Use a word list file (words you want to learn)")
+        choice = input("Choose option (1 or 2) [1]: ").strip() or "1"
 
-        # Get number of words and phrases
-        try:
-            num_words = int(
-                input("Number of German words to generate [10]: ").strip() or "10"
-            )
+        word_list = None
+        topic = None
+
+        if choice == "2":
+            # Get word list file
+            file_path = input(
+                "Enter path to word list file (e.g., ../examples/example_word_list.txt): "
+            ).strip()
+            if not file_path or not os.path.exists(file_path):
+                print(f"❌ File not found: {file_path}")
+                return False
+
+            # Read words from file
+            with open(file_path, "r", encoding="utf-8") as f:
+                word_list = [
+                    line.strip()
+                    for line in f
+                    if line.strip() and not line.startswith("#")
+                ]
+
+            if not word_list:
+                print("❌ No words found in file")
+                return False
+
+            print(f"✅ Loaded {len(word_list)} words from file")
+            num_words = len(word_list)
             num_phrases = int(
-                input("Number of German phrases to generate [5]: ").strip() or "5"
+                input(f"Number of practice phrases per word [2]: ").strip() or "2"
             )
-        except ValueError:
-            print("❌ Please enter valid numbers")
-            return False
+            topic = f"words from your list: {', '.join(word_list[:3])}..."
+
+        else:
+            # Get topic (original flow)
+            topic = input(
+                "Enter topic for German vocabulary (e.g., 'food', 'travel', 'business'): "
+            ).strip()
+            if not topic:
+                print("❌ Topic is required")
+                return False
+
+            # Get number of words and phrases
+            try:
+                num_words = int(
+                    input("Number of German words to generate [10]: ").strip() or "10"
+                )
+                num_phrases = int(
+                    input("Number of German phrases to generate [5]: ").strip() or "5"
+                )
+            except ValueError:
+                print("❌ Please enter valid numbers")
+                return False
 
         # Analyze existing deck content
         print("\n📊 Analyzing existing deck content...")
@@ -858,11 +924,17 @@ AUDIO_FIELD={self.config.get('audio_field', 'Front')}
         print(f"✅ Deck analysis complete")
 
         # Generate content with Gemini
-        print(
-            f"\n🧠 Generating {num_words} words and {num_phrases} phrases about '{topic}'..."
-        )
+        if word_list:
+            print(
+                f"\n🧠 Generating translations and {num_phrases} phrases per word for your {len(word_list)} words..."
+            )
+        else:
+            print(
+                f"\n🧠 Generating {num_words} words and {num_phrases} phrases about '{topic}'..."
+            )
+
         content_data = self.generate_german_content(
-            topic, num_words, num_phrases, existing_content
+            topic, num_words, num_phrases, existing_content, word_list=word_list
         )
 
         if not content_data:
