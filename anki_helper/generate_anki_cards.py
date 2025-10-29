@@ -19,13 +19,15 @@ def load_word_frequency(json_file):
 
 
 def load_custom_word_list(txt_file):
-    """Load custom word list from text file (one word per line)"""
+    """Load custom word list or phrases from text file (one per line)"""
     words = []
     with open(txt_file, "r", encoding="utf-8") as f:
         for line in f:
-            word = line.strip()
-            if word and not word.startswith("#"):
-                words.append(word.lower())
+            item = line.strip()
+            # Skip empty lines and comments
+            if item and not item.startswith("#"):
+                # Keep original case for phrases, lowercase for words
+                words.append(item)
     return words
 
 

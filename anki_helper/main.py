@@ -1310,6 +1310,121 @@ AUDIO_FIELD={self.config.get('audio_field', 'Front')}
         if save == "y":
             self.save_config_to_env()
 
+    def translate_phrases_from_file(self):
+        """Translate phrases from file and add to Anki with audio"""
+        print("\n📝 Step 3: Translate Phrases from File")
+        print("=" * 50)
+
+        # Get file path
+        file_path = input(
+            "Enter path to file with phrases (e.g., ../german.txt): "
+        ).strip()
+
+        if not file_path or not os.path.exists(file_path):
+            print(f"❌ File not found: {file_path}")
+            return False
+
+        # Read phrases from file
+        with open(file_path, "r", encoding="utf-8") as f:
+            phrases = [
+                line.strip() for line in f if line.strip() and not line.startswith("#")
+            ]
+
+        if not phrases:
+            print("❌ No phrases found in file")
+            return False
+
+        print(f"✅ Loaded {len(phrases)} phrases from file")
+
+        # Translate phrases using Gemini
+        target_lang = self.config.get("target_language", "de")
+        mother_lang = self.config.get("mother_language", "en")
+
+        print(f"\n🧠 Translating {len(phrases)} phrases...")
+
+        # Create prompt for translation
+        phrases_str = "\n".join(
+            [f"{i+1}. {phrase}" for i, phrase in enumerate(phrases)]
+        )
+        prompt = f"""Translate these {len(phrases)} {target_lang.upper()} phrases to {mother_lang.upper()}:
+
+{phrases_str}
+
+Return ONLY valid JSON (no markdown, no extra text) with this exact structure:
+{{"phrases": [{{"german": "original", "english": "translation", "phonetic": "IPA"}}]}}
+
+CRITICAL REQUIREMENTS:
+- Keep exact original {target_lang.upper()} phrases unchanged
+- Provide natural {mother_lang.upper()} translations
+- "phonetic" field MUST contain IPA transcription for the GERMAN phrase pronunciation ONLY, NOT the translation
+- Use accurate German IPA pronunciation guides
+- Output ONLY the JSON object, nothing else"""
+
+        try:
+            response = self.gemini_client.generate_content(prompt)
+            content = response.text.strip()
+
+            # Debug: print raw response
+            print(f"\n🔍 Debug: Raw response from Gemini...")
+
+            # Remove markdown code blocks if present
+            if content.startswith("```json"):
+                content = content[7:]
+            if content.endswith("```"):
+                content = content[:-3]
+            if content.startswith("```"):
+                content = content[3:]
+            if content.endswith("```"):
+                content = content[:-3]
+
+            # Try to parse JSON
+            try:
+                content_data = json.loads(content)
+            except json.JSONDecodeError as e:
+                print(f"❌ JSON parsing failed: {e}")
+                print(f"Content received: {content[:500]}...")
+                return False
+
+            # Show preview
+            print(f"\n📝 Translation preview:")
+            for i, phrase in enumerate(content_data.get("phrases", [])[:3], 1):
+                phonetic = phrase.get("phonetic", "")
+                phonetic_display = f" [{phonetic}]" if phonetic else ""
+                print(
+                    f"{i}. {phrase['german']} = {phrase['english']}{phonetic_display}"
+                )
+
+            if len(content_data.get("phrases", [])) > 3:
+                print(f"   ... and {len(content_data['phrases']) - 3} more phrases")
+
+            # Confirm
+            confirm = (
+                input(
+                    f"\nCreate {len(content_data.get('phrases', []))} cards with audio? (y/n): "
+                )
+                .strip()
+                .lower()
+            )
+            if confirm != "y":
+                print("❌ Cancelled")
+                return False
+
+            # Create cards
+            print("\n📚 Creating Anki cards...")
+            success = self.create_anki_cards(
+                {"words": [], "phrases": content_data.get("phrases", [])}
+            )
+
+            if success:
+                print("✅ Cards created! Now adding audio...")
+                return self.process_deck()
+
+            return success
+
+        except Exception as e:
+            print(f"❌ Translation failed: {e}")
+            return False
+
     def show_current_config(self):
         """Show current configuration"""
         print("\n📋 Current Configuration")
@@ -1337,8 +1452,9 @@ AUDIO_FIELD={self.config.get('audio_field', 'Front')}
         print("3. Add audio to existing cards")
         print("4. Both (generate vocabulary + add audio)")
         print("5. Both (generate grammar + add audio)")
-        print("6. Configure settings")
-        print("7. Exit")
+        print("6. Translate phrases from file + add audio")
+        print("7. Configure settings")
+        print("8. Exit")
         print()
 
     def run(self):
@@ -1364,7 +1480,7 @@ AUDIO_FIELD={self.config.get('audio_field', 'Front')}
         # Step 4: Show menu and process
         while True:
             self.show_menu()
-            choice = input("Enter your choice (1-7): ").strip()
+            choice = input("Enter your choice (1-8): ").strip()
 
             if choice == "1":
                 # Generate vocabulary content only
@@ -1423,6 +1539,14 @@ AUDIO_FIELD={self.config.get('audio_field', 'Front')}
                     print("❌ Grammar generation failed")
 
             elif choice == "6":
+                # Translate phrases from file + add audio
+                success = self.translate_phrases_from_file()
+                if not success:
+                    print("❌ Phrase translation failed")
+                else:
+                    print("✅ Phrase translation and audio completed!")
+
+            elif choice == "7":
                 # Configure settings
                 print("\n⚙️ Configuration Menu")
                 print("=" * 30)
@@ -1448,16 +1572,16 @@ AUDIO_FIELD={self.config.get('audio_field', 'Front')}
                     print("❌ Invalid choice")
                     continue
 
-            elif choice == "7":
+            elif choice == "8":
                 print("👋 Goodbye!")
                 return True
 
             else:
-                print("❌ Invalid choice. Please enter 1-7.")
+                print("❌ Invalid choice. Please enter 1-8.")
                 continue
 
             # Ask if user wants to continue
-            if choice in ["1", "2", "3", "4", "5"]:
+            if choice in ["1", "2", "3", "4", "5", "6"]:
                 continue_choice = (
                     input("\nWould you like to do something else? (y/n): ")
                     .strip()
